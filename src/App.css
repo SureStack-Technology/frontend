@@ -1,38 +1,26 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+.menu-font {
+  font-family: "Audiowide",sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.prose img {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-name {
+  font-size: 150px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active-link {
+  color: pink;
+  background-color: darkred;
 }
