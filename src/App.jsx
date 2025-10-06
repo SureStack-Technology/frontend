@@ -1,23 +1,30 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import NavBar from "./components/NavBar";
+import Hero from "./components/sections/Hero";
+import Features from "./components/sections/Features";
+import Team from "./components/sections/Team";
+import Blog from "./components/sections/Blog";
+import Contact from "./components/sections/Contact";
+import Navigation from "./components/sections/Navigation";
+import Footer from "./components/sections/Footer";
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route element={<Home/>} path='/' exact/>
-        <Route element={<About/>} path='/about' />
-        <Route element={<Contact/>} path='/contact' />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-slate-900 min-h-screen">
+      {/* Navigation is fixed, placed outside scrollable content */}
+      <Navigation /> 
+      {/* Main content sections */}
+      <main>
+        <Hero />
+        <Features />
+        <Team />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

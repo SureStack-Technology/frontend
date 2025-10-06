@@ -15,7 +15,7 @@ export default function NavBar(){
                     <NavLink className={({ isActive }) => isActive 
                                         ? 'inline-flex items-center py-3 px-3 my-6 rounded text-blue-100 bg-blue-700 hover:text-blue-200' 
                                         : 'inline-flex items-center py-3 px-3 my-6 rounded text-blue-200 hover:text-blue-200'}
-                            to={"/contact"}>Contact</NavLink>
+                            to={"/contact"}>Contact Us</NavLink>
                 </nav>
             </div>
         </header>
