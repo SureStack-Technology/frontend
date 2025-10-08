@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { SanityClient } from "@sanity/client";
 import { Shield, Zap, Users, TrendingUp, Check, } from 'lucide-react';
 
 // Modularized feature card
@@ -46,6 +47,9 @@ const Features = () => {
         { text: "Dynamic, responsive pricing", isRisk: false },
         { text: "Full team transparency", isRisk: false },
     ];
+
+    // const []
+
 
     return (
         <section id="features" className="py-20 bg-slate-800">

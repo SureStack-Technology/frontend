@@ -20,12 +20,27 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'education',
+      title: 'Education',
+      type: 'string',
+    }),
+    defineField({
+      name: 'experience',
+      title: 'Experience',
+      type: 'string',
     }),
     defineField({
       name: 'bio',
