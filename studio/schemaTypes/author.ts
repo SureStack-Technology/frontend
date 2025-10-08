@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'sequence',
+      title: 'Sequence',
+      type: 'number',
+    }),
+    defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
@@ -41,6 +46,11 @@ export default defineType({
       name: 'experience',
       title: 'Experience',
       type: 'string',
+    }),
+    defineField({
+      name: 'linkedIn',
+      title: 'LinkedIn',
+      type: 'url',
     }),
     defineField({
       name: 'bio',

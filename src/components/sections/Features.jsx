@@ -1,54 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { SanityClient } from "@sanity/client";
+import { client } from "../../sanity.js";
 import { Shield, Zap, Users, TrendingUp, Check, } from 'lucide-react';
+import { DynamicIcon } from 'lucide-react/dynamic';
+
+const PortableText = ({ blocks }) => {
+  return blocks.map((block, i) => (
+    <p key={i} className="text-slate-300 leading-relaxed">
+      {block.children.map((child, j) => (
+        <span key={j}>{child.text}</span>
+      ))}
+    </p>
+  ));
+};
 
 // Modularized feature card
-const FeatureCard = ({ icon, title, description }) => (
+const FeatureCard = ({ feature }) => (
   <div className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition">
-    <div className="text-cyan-400 mb-4">{icon}</div>
-    <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-    <p className="text-slate-300">{description}</p>
+    <div className="text-cyan-400 mb-4"><DynamicIcon name={feature.icon} size={32} /></div>
+    <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
+    <div className="text-slate-300">
+        {feature.description && (
+            <PortableText blocks={feature.description} />
+        )}
+    </div>
   </div>
 );
 
+const FEATURE_QUERY = `*[_type == "feature"]`;
+const ADVANTAGE_QUERY = `*[_type == "advantage"]`;
+const options = { next: { revalidate: 30 } };
 
 const Features = () => {
 
-    const featureData = [
-        {
-          icon: <Zap className="w-8 h-8" />,
-          title: "Real-Time Volatility Integration",
-          description: "Risk scores adjust every 30 seconds based on actual market conditions, not yesterday's estimates."
-        },
-        {
-          icon: <TrendingUp className="w-8 h-8" />,
-          title: "Dynamic Risk Pricing",
-          description: "Insurance premiums automatically adjust to maintain pool solvency during high volatility periods."
-        },
-        {
-          icon: <Users className="w-8 h-8" />,
-          title: "Decentralized Consensus",
-          description: "Multiple validators independently assess risk using advanced ML models, eliminating single points of failure."
-        },
-        {
-          icon: <Shield className="w-8 h-8" />,
-          title: "Full Transparency",
-          description: "Complete team disclosure with verifiable credentials - no anonymous founders or hidden identities."
-        }
-    ];
+    const [featureData, setFeatures] = useState([]);
+    const [advantageData, setAdvantages] = useState([]);
+      
+    useEffect(() => {
+        client
+            .fetch(FEATURE_QUERY, {}, options)
+            .then((data) => setFeatures(data))
+            .catch(console.error);
+    }, []);
 
-    const advantageData = [
-        { text: "Static risk models updated daily/weekly", isRisk: true },
-        { text: "No real-time volatility integration", isRisk: true },
-        { text: "Fixed insurance premiums", isRisk: true },
-        { text: "Anonymous or limited team disclosure", isRisk: true },
-        { text: "Real-time updates every 30 seconds", isRisk: false },
-        { text: "Live market volatility integration", isRisk: false },
-        { text: "Dynamic, responsive pricing", isRisk: false },
-        { text: "Full team transparency", isRisk: false },
-    ];
-
-    // const []
+    useEffect(() => {
+        client
+            .fetch(ADVANTAGE_QUERY, {}, options)
+            .then((data) => setAdvantages(data))
+            .catch(console.error);
+    }, []);
 
 
     return (
@@ -63,7 +62,7 @@ const Features = () => {
         
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                    {featureData.map((feature, index) => (
-                        <FeatureCard key={index} {...feature} />
+                        <FeatureCard key={index} feature={feature} />
                     ))}
                 </div>
         

@@ -1,8 +1,27 @@
-// src/components/common/TeamMemberModal.jsx
 import React from 'react';
-import { X, Check, Linkedin } from 'lucide-react';
+import { X, Check, Play, Linkedin } from 'lucide-react';
+import { client } from "../../sanity.js";
+import imageUrlBuilder from '@sanity/image-url';
+// import {PortableText} from '@portabletext/react';
+
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source)
+}
+
+const PortableText = ({ blocks }) => {
+  return blocks.map((block, i) => (
+    <p key={i} className="text-white leading-relaxed">
+      {block.children.map((child, j) => (
+        <span key={j}><Play size={12} className='inline'/> {child.text}</span>
+      ))}
+    </p>
+  ));
+};
 
 const TeamMemberModal = ({ member, onClose }) => {
+
   if (!member) return null;
 
   return (
@@ -11,7 +30,9 @@ const TeamMemberModal = ({ member, onClose }) => {
         <div className="p-8">
           <div className="flex items-start justify-between mb-6">
             <div className="flex items-center">
-              <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full object-cover mr-6" />
+              {member.image ?
+              <img src={urlFor(member.image).url()} alt={member.name} className="w-24 h-24 rounded-full object-cover mr-6" /> : 
+              <img src={"https://ui-avatars.com/api/?name="+member.name} alt={member.name} className="w-full h-64 object-cover" />}
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
                 <p className="text-cyan-400 text-lg mb-2">{member.role}</p>
@@ -30,20 +51,17 @@ const TeamMemberModal = ({ member, onClose }) => {
 
           <div className="mb-6">
             <h4 className="text-white font-semibold mb-3">Key Highlights</h4>
-            <ul className="space-y-2">
-              {member.highlights.map((highlight, i) => (
-                <li key={i} className="text-slate-300 flex items-start">
-                  <Check className="w-5 h-5 text-cyan-400 mr-2 mt-0.5 flex-shrink-0" />
-                  {highlight}
-                </li>
-              ))}
-            </ul>
+            {member.bio && (<
+              PortableText blocks={member.bio} />
+            )}
           </div>
 
-          <a href={member.linkedin} className="inline-flex items-center text-cyan-400 hover:text-cyan-300">
-            <Linkedin className="w-5 h-5 mr-2" />
-            View LinkedIn Profile
-          </a>
+          {member.linkedIn && (
+            <a href={member.linkedIn} target='_blank' className="inline-flex items-center text-cyan-400 hover:text-cyan-300">
+              <Linkedin className="w-5 h-5 mr-2" />
+              View LinkedIn Profile
+            </a>
+          )}
         </div>
       </div>
     </div>

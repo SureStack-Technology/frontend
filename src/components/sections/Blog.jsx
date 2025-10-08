@@ -24,7 +24,6 @@ const BlogPostCard = ({ post }) => (
 );
 
 const POSTS_QUERY = `*[_type == "post"]|order(publishedAt asc)`;
-
 const options = { next: { revalidate: 30 } };
 
 const Blog = () => {

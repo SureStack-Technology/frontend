@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@portabletext/react": "^4.0.3",
     "@sanity/client": "^7.12.0",
     "@sanity/image-url": "^1.2.0",
     "@tailwindcss/cli": "^4.0.0",
@@ -26,6 +27,7 @@
     "react-router-dom": "^7.9.3",
     "react-router-hash-link": "^2.4.3",
     "sanity": "^4.10.2",
+    "sanity-plugin-lucide-icon-picker": "^1.0.3",
     "web-vitals": "^2.1.4"
   },
   "eslintConfig": {
