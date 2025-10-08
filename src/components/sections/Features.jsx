@@ -16,8 +16,11 @@ const PortableText = ({ blocks }) => {
 // Modularized feature card
 const FeatureCard = ({ feature }) => (
   <div className="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition">
-    <div className="text-cyan-400 mb-4"><DynamicIcon name={feature.icon} size={32} /></div>
-    <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
+    <div className="flex flex-row justify-between items-center rounded-lg text-cyan-200 p-2 sm:p-3 transition-colors">
+        <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
+        <DynamicIcon name={feature.icon} className="bg-slate-800 p-2 rounded-lg h-16 w-16"/>
+    </div>
+    
     <div className="text-slate-300">
         {feature.description && (
             <PortableText blocks={feature.description} />
