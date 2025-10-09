@@ -2,8 +2,6 @@ import React from 'react';
 import { X, Check, Play, Linkedin } from 'lucide-react';
 import { client } from "../../sanity.js";
 import imageUrlBuilder from '@sanity/image-url';
-// import {PortableText} from '@portabletext/react';
-
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
