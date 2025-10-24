@@ -28,7 +28,8 @@
     "react-router-hash-link": "^2.4.3",
     "sanity": "^4.10.2",
     "sanity-plugin-lucide-icon-picker": "^1.0.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^5.0.8"
   },
   "eslintConfig": {
     "extends": [
