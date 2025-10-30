@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, Mail, Lock } from 'lucide-react';
 import useAuthStore from '../../stores/useAuthStore';
 import loginUser from '../../services/xanoAuthService';
 
 const LoginModal = ({ isOpen, onClose }) => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -11,15 +13,19 @@ const LoginModal = ({ isOpen, onClose }) => {
   
   // Get the login action from the Zustand store
   const login = useAuthStore((state) => state.login);
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     setError('');
     setIsLoading(true);
 
     try {
+
+      // 0. Login to Xano
       const { token, user } = await loginUser(email, password);
       
       // 1. Store the user data and token in Zustand
@@ -30,8 +36,10 @@ const LoginModal = ({ isOpen, onClose }) => {
       setEmail('');
       setPassword('');
 
+      // 3. Navigate to the new Dashboard page
+      navigate('/dashboard');
+
     } catch (err) {
-      // 3. Display API error
       setError(err.message || 'An unexpected error occurred during login.');
     } finally {
       setIsLoading(false);
