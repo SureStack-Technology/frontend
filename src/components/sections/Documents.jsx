@@ -2,16 +2,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import useAuthStore from '../../stores/useAuthStore';
 import { fetchDocuments } from '../../services/documentService';
-import { FileText, Download, ShieldCheck, AlertTriangle, Loader } from 'lucide-react';
+import { FileText, Download, ShieldCheck, AlertTriangle, Loader, Upload, UserCheck } from 'lucide-react';
+import UploadModal from '../common/UploadModal';
 
 const Documents = () => {
 
   const token = useAuthStore((state) => state.token);
   const user = useAuthStore((state) => state.user);
+  const isSystemUser = user?.role === 'system';
   
-  const [documents, setDocuments] = useState([]); // State to hold the array of documents
+  const [documents, setDocuments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   const loadDocuments = useCallback(async () => {
     setIsLoading(true);
@@ -31,6 +34,12 @@ const Documents = () => {
     loadDocuments();
   }, [loadDocuments]);
   
+  // A function to call to refresh the list after a successful upload
+  const handleSuccessfulUpload = () => {
+      // Re-fetch the document list to display the newly uploaded file
+      loadDocuments();
+  }
+
   // Helper Component for a single document card
   const DocumentCard = ({ doc }) => (
     <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg flex justify-between items-center transition hover:border-cyan-500">
@@ -46,27 +55,47 @@ const Documents = () => {
             </p>
         </div>
         
-        {doc.fileUrl ? (
-            <a 
-                href={doc.fileUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 px-4 rounded-lg font-semibold transition"
-            >
+        {doc.url ? (
+            <a href={doc.url} 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="flex items-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 px-4 rounded-lg font-semibold transition">
                 <Download className="w-5 h-5 mr-2" /> Download
             </a>
         ) : (
             <span className="text-yellow-500 text-sm">Link Unavailable</span>
         )}
+
+        {/* {doc.fileUrl ? (
+            <a href={doc.fileUrl} 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="flex items-center bg-cyan-600 hover:bg-cyan-500 text-white py-2 px-4 rounded-lg font-semibold transition">
+                <Download className="w-5 h-5 mr-2" /> Download
+            </a>
+        ) : (
+            <span className="text-yellow-500 text-sm">Link Unavailable</span>
+        )} */}
     </div>
   );
 
   return (
+    <>
     <div className="pt-24 min-h-screen bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-6 text-cyan-400 flex items-center">
-          <FileText className="w-8 h-8 mr-3" /> Document Library
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-4xl font-bold mb-6 text-cyan-400 flex items-center">
+            <FileText className="w-8 h-8 mr-3" /> Document Library
+          </h1>
+
+          {isSystemUser && (
+          <button onClick={() => setIsUploadModalOpen(true)}
+                  className="bg-green-600 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded-lg transition flex items-center text-lg">
+              <Upload className="w-5 h-5 mr-2" /> Upload New
+          </button>
+          )}
+        </div>
+
         <p className="text-xl text-slate-300 mb-8">
           Here are all the privileged documents available to your account.
         </p>
@@ -101,6 +130,14 @@ const Documents = () => {
 
       </div>
     </div>
+
+    {/* Upload Modal (Only renders if opened) */}
+    <UploadModal 
+      isOpen={isUploadModalOpen} 
+      onClose={() => setIsUploadModalOpen(false)} 
+      onUploadSuccess={handleSuccessfulUpload}
+    />
+    </>
   );
 };
 

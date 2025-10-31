@@ -28,24 +28,6 @@ const PrivateRoute = ({ element: Element }) => {
 };
 // ----------------------------------------
 
-// const App = () => {
-//   return (
-//     <div className="bg-slate-900 min-h-screen">
-//       {/* Navigation is fixed, placed outside scrollable content */}
-//       <Navigation /> 
-//       {/* Main content sections */}
-//       <main>
-//         <Hero />
-//         <Features />
-//         <Team />
-//         <Blog />
-//         <Contact />
-//       </main>
-//       <Footer />
-//     </div>
-//   );
-// }
-
 // Main Landing Page Component (combines all public sections)
 const LandingPage = () => (
     <main>

@@ -53,7 +53,7 @@ const LoginModal = ({ isOpen, onClose }) => {
       <div className="bg-slate-800 rounded-xl max-w-sm w-full shadow-2xl border border-slate-700" onClick={e => e.stopPropagation()}>
         <div className="p-8">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-2xl font-bold text-white">Login to RISK Protocol</h3>
+            <h3 className="text-2xl font-bold text-white">Login to SureStack</h3>
             <button onClick={onClose} className="text-slate-400 hover:text-white">
               <X />
             </button>
