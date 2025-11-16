@@ -1,4 +1,3 @@
-"use client"
 import React, { useState, useEffect, useCallback } from 'react';
 import useAuthStore from '../../stores/useAuthStore';
 import { fetchDocuments } from '../../services/documentService';
@@ -132,11 +131,9 @@ const Documents = () => {
     </div>
 
     {/* Upload Modal (Only renders if opened) */}
-    <UploadModal 
-      isOpen={isUploadModalOpen} 
+    <UploadModal isOpen={isUploadModalOpen} 
       onClose={() => setIsUploadModalOpen(false)} 
-      onUploadSuccess={handleSuccessfulUpload}
-    />
+      onUploadSuccess={handleSuccessfulUpload}/>
     </>
   );
 };

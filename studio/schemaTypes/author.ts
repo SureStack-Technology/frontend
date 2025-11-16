@@ -38,6 +38,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'alt_image',
+      title: 'Alt Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'education',
       title: 'Education',
       type: 'string',

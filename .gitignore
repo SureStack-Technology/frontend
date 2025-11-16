@@ -17,6 +17,7 @@
 >>>>>>> fd7a77db3f61708eb654b9221042f25c8123b270
 # production
 /build
+/dist
 
 # misc
 .DS_Store

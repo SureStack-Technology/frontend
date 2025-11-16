@@ -9,12 +9,41 @@ function urlFor(source) {
 }
 
 // Modularized team member card
-const TeamMemberCard = ({ member, onClick }) => (
+const TeamMemberCard = ({ member, onClick }) => {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
     <div onClick={() => onClick(member)}
-        className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400 transition cursor-pointer">
-        {member.image ?
-        <img src={urlFor(member.image).url()} alt={member.name} className="w-full h-64 object-cover" /> : 
-        <img src={"https://ui-avatars.com/api/?name="+member.name} alt={member.name} className="w-full h-64 object-cover" />}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400 transition cursor-pointer">
+        <div className="relative w-full h-64 overflow-hidden">
+            {/* Default Image */}
+            {member.image ? (
+                <img src={urlFor(member.image).url()} 
+                     alt={member.name} 
+                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                        isHovered && member.alt_image ? 'opacity-0' : 'opacity-100'
+                     }`}
+                />
+            ) : (
+                <img src={"https://ui-avatars.com/api/?name="+member.name} 
+                    alt={member.name} 
+                    className="absolute inset-0 w-full h-full object-cover" 
+                />
+            )}
+            
+            {/* Hover Image */}
+            {member.alt_image && (
+                <img src={urlFor(member.alt_image).url()} 
+                     alt={member.name} 
+                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                        isHovered ? 'opacity-100' : 'opacity-0'
+                     }`}
+                />
+            )}
+        </div>
         <div className="p-6">
             <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
             <p className="text-cyan-400 mb-3">{member.role}</p>
@@ -24,7 +53,8 @@ const TeamMemberCard = ({ member, onClick }) => (
             </button>
         </div>
     </div>
-);
+  );
+};
 
 
 const TEAM_QUERY = `*[_type == "author"]|order(sequence asc)`;
