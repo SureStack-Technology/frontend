@@ -1,0 +1,23 @@
+name: Deploy Project
+
+on: 
+  push:
+    branches:
+     - main
+
+jobs:
+  deploy-to-production:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Only deploy from main branch
+    container:
+      image: node:25
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          node-version:25
+      - run: npm ci
+      - run: npm run build
+      - name: Get SSH key and set permissions
+      - name: Deploy using SCP
+      - name: Restart Server
