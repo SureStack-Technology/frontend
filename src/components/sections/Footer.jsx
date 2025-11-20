@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PrivacyPolicyModal from "../common/PrivacyPolicyModal";
 import TermsOfUseModal from "../common/TermsOfUseModal";
-import { Shield, Twitter, Github, Linkedin } from 'lucide-react';
+import { Shield, Twitter, Github, Linkedin, Youtube } from 'lucide-react';
 
 // Modularized Footer Link Column
 const FooterLinkColumn = ({ title, links }) => (
@@ -52,13 +52,22 @@ const Footer = () => {
                 <FooterLinkColumn title="Product" links={productLinks} />
                 <FooterLinkColumn title="Company" links={companyLinks} />
 
-                {/* Connect Column */}
+                {/* Connection Column */}
                 <div>
                     <h3 className="text-white font-semibold mb-4">Connect</h3>
                     <div className="flex space-x-4">
-                        <a href="#" className="text-slate-400 hover:text-cyan-400"><Twitter /></a>
-                        <a href="https://github.com/surestack" className="text-slate-400 hover:text-cyan-400"><Github /></a>
-                        <a href="#" className="text-slate-400 hover:text-cyan-400"><Linkedin /></a>
+                        <a href="https://x.com/sure_stack?s=11" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <Twitter />
+                        </a>
+                        <a href="https://github.com/surestack" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <Github />
+                        </a>
+                        <a href="https://www.linkedin.com/company/surestacksecurity" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <Linkedin />
+                        </a>
+                        <a href="https://www.youtube.com/@SureStack" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <Youtube />
+                        </a>
                     </div>
                 </div>
             </div>
