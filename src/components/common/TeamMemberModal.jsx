@@ -1,9 +1,10 @@
 import React from 'react';
 import { X, Check, Play, Linkedin } from 'lucide-react';
 import { client } from "../../sanity.js";
-import imageUrlBuilder from '@sanity/image-url';
+// import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source)
 }

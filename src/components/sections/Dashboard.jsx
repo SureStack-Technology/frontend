@@ -6,7 +6,7 @@ const Dashboard = () => {
   const { user, logout } = useAuthStore();
 
   return (
-    <div className="pt-24 min-h-screen bg-slate-900 text-white">
+    <div className="pt-24 min-h-screen text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-6 text-cyan-400 flex items-center">
           <Zap className="w-8 h-8 mr-3" /> Dashboard

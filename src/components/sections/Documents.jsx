@@ -80,7 +80,7 @@ const Documents = () => {
 
   return (
     <>
-    <div className="pt-24 min-h-screen bg-slate-900 text-white">
+    <div className="pt-24 min-h-screen text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-4xl font-bold mb-6 text-cyan-400 flex items-center">

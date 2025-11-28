@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TeamMemberModal from '../common/TeamMemberModal';
 import { client } from "../../sanity.js";
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source)
 }
@@ -74,7 +74,7 @@ const Team = () => {
     }, []);
 
   return (
-    <section id="team" className="py-20 bg-slate-900">
+    <section id="team" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Leadership Team</h2>
@@ -83,7 +83,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {postData.map((member, index) => (
             <TeamMemberCard key={index} member={member} onClick={setSelectedMember} />
           ))}
