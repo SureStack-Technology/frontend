@@ -57,16 +57,22 @@ const Footer = () => {
                     <h3 className="text-white font-semibold mb-4">Connect</h3>
                     <div className="flex space-x-4">
                         <a href="https://x.com/sure_stack?s=11" target="_blank" className="text-slate-400 hover:text-cyan-400">
-                            <Twitter />
+                            <Twitter size={32} color="#ffffff"/>
                         </a>
                         <a href="https://github.com/surestack" target="_blank" className="text-slate-400 hover:text-cyan-400">
-                            <Github />
+                            <Github size={32} color="#ffffff"/>
                         </a>
                         <a href="https://www.linkedin.com/company/surestacksecurity" target="_blank" className="text-slate-400 hover:text-cyan-400">
-                            <Linkedin />
+                            <Linkedin size={32} color="#ffffff"/>
                         </a>
                         <a href="https://www.youtube.com/@SureStack" target="_blank" className="text-slate-400 hover:text-cyan-400">
-                            <Youtube />
+                            <Youtube size={32} color="#ffffff"/>
+                        </a>
+                        <a href="https://medium.com/@SureStack" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <img alt="Medium" width="84" height="84" src="https://wakadigital.systems/surestack/assets/icons/medium_icon_white.png"/>    
+                        </a>
+                        <a href="https://telegram.org/@SureStackOfficial" target="_blank" className="text-slate-400 hover:text-cyan-400">
+                            <img alt="Telegram" width="84" height="84" src="https://wakadigital.systems/surestack/assets/icons/telegram_icon_outline.png" />
                         </a>
                     </div>
                 </div>
