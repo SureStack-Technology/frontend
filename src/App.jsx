@@ -1,8 +1,5 @@
 import React, { useCallback, useMemo, useEffect, useState } from "react";
 
-// import Particles, { initParticlesEngine } from "react-particles";
-// import { loadSlim } from "tsparticles-slim";
-
 import Particles from "@tsparticles/react"; 
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -54,7 +51,7 @@ const LandingPage = () => (
 const AppContent = () => {
     return (
         <div className="relative z-10 min-h-screen">
-            
+
             <Navigation /> 
             
             <Routes>

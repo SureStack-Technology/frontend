@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Github, Shield } from 'lucide-react';
 
-// Modularized contact information block
-const ContactInfoItem = ({ Icon, title, link, linkText }) => (
-  <div className="flex items-start">
-    <Icon className="w-6 h-6 text-cyan-400 mr-4 mt-1" />
-    <div>
-      <h3 className="text-white font-semibold mb-1">{title}</h3>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-cyan-400">
-        {linkText}
-      </a>
-    </div>
-  </div>
-);
-
 // Modularized contact form
 const EarlyBirdForm = () => {
 
@@ -95,14 +82,14 @@ const EarlyBirdForm = () => {
                     onChange={handleChange}
                     rows={4}
                     className={inputClasses}
-                    placeholder="Tell us about your needs..."
+                    placeholder="Tell us what you do ..."
                     required></textarea>
         </div>
 
         <button
           type="submit"
           className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition">
-          Send Request
+          Sign me up
         </button>
       </form>
     </div>
@@ -114,37 +101,19 @@ const EarlyAdoption = () => {
   return (
     <section id="earlybird" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">Early Adoption Program</h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto"></p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-6">Early Adoption Program</h2>
-            <p className="text-xl text-slate-300 mb-8">
+          
+            <EarlyBirdForm />
+            
+            <div className="space-y-6 text-white">
               If you are interested in joining our early adoption program, to receive updates and benefits, 
               please fill out this form and we will be in touch.
-            </p>
-
-            <ContactForm />
-            
-            <div className="space-y-6">
-              {/* <ContactInfoItem 
-                Icon={Mail} 
-                title="Email" 
-                link="mailto:hello@surestack.tech" 
-                linkText="hello@surestack.tech" 
-              />
-              <ContactInfoItem 
-                Icon={Github} 
-                title="GitHub" 
-                link="https://github.com/surestack" 
-                linkText="github.com/surestack" 
-              />
-              <ContactInfoItem 
-                Icon={Shield} 
-                title="Website" 
-                link="https://surestack.tech" 
-                linkText="surestack.tech" 
-              /> */}
             </div>
-          </div>
 
         </div>
       </div>
@@ -152,4 +121,4 @@ const EarlyAdoption = () => {
   );
 };
 
-export default Contact;
+export default EarlyAdoption;
