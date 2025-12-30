@@ -14,6 +14,7 @@ import Hero from "./components/sections/Hero";
 import Features from "./components/sections/Features";
 import Team from "./components/sections/Team";
 import Blog from "./components/sections/Blog";
+import EarlyBird from "./components/sections/EarlyBird";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import Dashboard from './components/sections/Dashboard';
@@ -45,6 +46,7 @@ const LandingPage = () => (
       <Features />
       <Team />
       <Blog />
+      <EarlyBird />
       <Contact />
     </main>
 );
@@ -52,6 +54,7 @@ const LandingPage = () => (
 const AppContent = () => {
     return (
         <div className="relative z-10 min-h-screen">
+            
             <Navigation /> 
             
             <Routes>

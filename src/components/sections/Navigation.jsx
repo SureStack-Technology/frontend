@@ -14,12 +14,13 @@ const Navigation = () => {
     
     // Define navigation items. Use 'to' for internal Link routes, 'href' for external or section anchors.
     const navItems = [
-        { type: 'anchor', href: "#features", label: "Features" },
-        { type: 'anchor', href: "#team", label: "Team" },
-        { type: 'anchor', href: "#blog", label: "Blog" },
-        { type: 'anchor', href: "#contact", label: "Contact" },
+        { type: 'anchor', href: "#features", label: "Features", protected: false  },
+        { type: 'anchor', href: "#team", label: "Team", protected: false },
+        { type: 'anchor', href: "#blog", label: "Blog", protected: false },
+        { type: 'anchor', href: "#contact", label: "Contact", protected: false },
         { type: 'route', to: "/dashboard", label: "Dashboard", protected: true },
         { type: 'route', to: "/documents", label: "Documents", protected: true },
+        { type: 'route', to: "https://poc.surestack.tech", label: "Concept", protected: true },
     ];
 
     const handleLogout = () => {
@@ -32,7 +33,7 @@ const Navigation = () => {
 
         const commonClasses = isMobile 
             ? "block px-3 py-2 text-slate-300 hover:text-cyan-400"
-            : "text-slate-300 hover:text-cyan-400 transition";
+            : "text-slate-300 hover:bg-cyan-900 border-1 border-solid border-cyan-400 w-28 text-center p-2 rounded-lg transition";
 
         const clickHandler = () => {
             setIsMenuOpen(false);
@@ -42,17 +43,23 @@ const Navigation = () => {
             }
         };
 
-        if (item.protected && !isLoggedIn) {
-            return null; // Don't show protected routes if logged out
+        if (isLoggedIn){
+            if (!item.protected) {
+                return null; // Don't show non protected routes if logged in
+            }
+        } else {
+            if (item.protected) {
+                return null; // Don't show protected routes if logged out
+            }
         }
         
         // For internal router links (e.g., Dashboard)
         if (item.type === 'route') {
-        return (
-            <Link to={item.to} onClick={clickHandler} className={commonClasses}>
-            {item.label}
-            </Link>
-        );
+            return (
+                <Link to={item.to} onClick={clickHandler} className={commonClasses}>
+                {item.label}
+                </Link>
+            );
         }
         
         // For section anchor links (e.g., Features)
