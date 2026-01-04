@@ -26,7 +26,7 @@ const EarlyBirdForm = () => {
     setStatus('submitting');
 
     try {
-      // REPLACE THIS URL with your actual Xano API Endpoint
+    
       const XANO_ENDPOINT = 'https://x8ki-letl-twmt.n7.xano.io/api:5m-n75rP/submit-lead'; 
       
       const response = await fetch(XANO_ENDPOINT, {

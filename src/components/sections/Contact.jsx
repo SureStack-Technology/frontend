@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Shield } from 'lucide-react';
+import { Mail, Github, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
 // Modularized contact information block
 const ContactInfoItem = ({ Icon, title, link, linkText }) => (
@@ -24,6 +24,9 @@ const ContactForm = () => {
     message: ''
   });
 
+  // Status: 'idle' | 'submitting' | 'success' | 'error'
+  const [status, setStatus] = useState('idle');
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -31,10 +34,37 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    alert('Thank you for your interest! We will contact you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setStatus('submitting');
+
+    try {
+    
+      const XANO_ENDPOINT = 'https://x8ki-letl-twmt.n7.xano.io/api:5m-n75rP/contact-us'; 
+      
+      const response = await fetch(XANO_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      // Success
+      setStatus('success');
+      setFormData({ name: '', email: '', company: '', message: '' });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000);
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    }
   };
 
   const inputClasses = "w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400";
@@ -99,10 +129,32 @@ const ContactForm = () => {
                     required></textarea>
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition">
-          Send Message
+        {/* Feedback Messages */}
+        {status === 'success' && (
+          <div className="p-3 bg-green-500/20 border border-green-500 rounded text-green-300 flex items-center gap-2">
+            <CheckCircle size={18} />
+            <span>Success! We'll be in touch soon.</span>
+          </div>
+        )}
+
+        {status === 'error' && (
+          <div className="p-3 bg-red-500/20 border border-red-500 rounded text-red-300 flex items-center gap-2">
+            <AlertCircle size={18} />
+            <span>Something went wrong. Please try again.</span>
+          </div>
+        )}
+
+        <button type="submit"
+                className="w-full bg-cyan-500 flex justify-center items-center hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition">
+          {status === 'submitting' ? (
+              <>
+                <Loader2 className="animate-spin" size={20} />
+                Sending...
+              </>
+            ) : (
+              'Send Message'
+            )
+          }
         </button>
       </form>
     </div>
