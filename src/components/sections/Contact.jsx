@@ -175,28 +175,26 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              <ContactInfoItem 
-                Icon={Mail} 
-                title="Email" 
-                link="mailto:hello@surestack.tech" 
-                linkText="hello@surestack.tech" 
-              />
-              <ContactInfoItem 
-                Icon={Github} 
-                title="GitHub" 
-                link="https://github.com/surestack" 
-                linkText="github.com/surestack" 
-              />
-              <ContactInfoItem 
-                Icon={Shield} 
-                title="Website" 
-                link="https://surestack.tech" 
-                linkText="surestack.tech" 
-              />
+              <ContactInfoItem Icon={Mail} 
+                              title="Email" 
+                              link="mailto:hello@surestack.tech" 
+                              linkText="hello@surestack.tech" />
+
+              <ContactInfoItem Icon={Github} 
+                              title="GitHub" 
+                              link="https://github.com/surestack" 
+                              linkText="github.com/surestack" />
+
+              <ContactInfoItem Icon={Shield} 
+                              title="Website" 
+                              link="https://surestack.tech" 
+                              linkText="surestack.tech" />
+
             </div>
           </div>
 
           <ContactForm />
+
         </div>
       </div>
     </section>
