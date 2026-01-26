@@ -5,7 +5,7 @@ import { DynamicIcon } from 'lucide-react/dynamic';
 
 const PortableText = ({ blocks }) => {
   return blocks.map((block, i) => (
-    <p key={i} className="text-slate-300 leading-relaxed">
+    <p key={i} className="font-subheading text-lg leading-relaxed">
       {block.children.map((child, j) => (
         <span key={j}>{child.text}</span>
       ))}
@@ -55,10 +55,10 @@ const Features = () => {
 
     return (
         <section id="features" className="py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-white mb-4">Why RISK Protocol?</h2>
-                    <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            <div className="glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
+                <div className="text-center mb-16 ">
+                    <h2 className="text-4xl font-heading text-white mb-4">Why RISK Protocol?</h2>
+                    <p className="text-2xl text-slate-300 font-subheading max-w-2xl mx-auto">
                     The only platform that combines real-time volatility analysis with decentralized risk assessment
                     </p>
                 </div>
@@ -75,7 +75,7 @@ const Features = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h4 className="text-cyan-400 font-semibold mb-3">Traditional Competitors</h4>
-                            <ul className="space-y-2 text-slate-300">
+                            <ul className="space-y-2 font-subheading text-lg">
                                 {advantageData.filter(d => d.isRisk).map((item, i) => (
                                     <li key={i}>❌ {item.text}</li>
                                 ))}
@@ -83,7 +83,7 @@ const Features = () => {
                         </div>
                         <div>
                             <h4 className="text-cyan-400 font-semibold mb-3">RISK Protocol</h4>
-                            <ul className="space-y-2 text-slate-300">
+                            <ul className="space-y-2 font-subheading text-lg">
                                 {advantageData.filter(d => !d.isRisk).map((item, i) => (
                                     <li key={i} className="flex items-start">
                                         <Check className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" /> {item.text}

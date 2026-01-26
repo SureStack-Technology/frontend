@@ -47,7 +47,7 @@ const TeamMemberCard = ({ member, onClick }) => {
         <div className="p-6">
             <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
             <p className="text-cyan-400 mb-3">{member.role}</p>
-            <p className="text-slate-300 text-sm mb-4">{member.education}</p>
+            <p className="font-subheading text-lg mb-4">{member.education}</p>
             <button className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                 View Full Profile →
             </button>
@@ -78,7 +78,7 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Leadership Team</h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+          <p className="text-xl font-subheading max-w-2xl mx-auto">
             Full transparency with verified credentials and proven track records
           </p>
         </div>

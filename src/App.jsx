@@ -20,6 +20,7 @@ import Documents from './components/sections/Documents';
 import useAuthStore from './stores/useAuthStore';
 
 import './App.css';
+import './styles/theme.css';
 
 // --- A Simple Private Route Component ---
 const PrivateRoute = ({ element: Element }) => {

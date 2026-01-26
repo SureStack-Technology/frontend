@@ -11,9 +11,23 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+    }),
+    defineField({
       name: 'except',
       title: 'Excerpt',
       type: 'string',
+      hidden: true,
+      deprecated: {
+        reason: 'Use the "Excerpt" field instead. '
+      },
+    }),
+    defineField({
+      name: 'externalLink',
+      title: 'Link',
+      type: 'url',
     }),
     defineField({
       name: 'slug',
@@ -48,6 +62,18 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+    }),
+    defineField({
+      name: 'created',
+      type: 'datetime',
+      title: 'Post creation date',
+      description: 'The editorial creation date for this post',
+    }),
+    defineField({
+      name: 'modified',
+      type: 'datetime',
+      title: 'Manual modified date',
+      description: 'The editorial modified date for this post',
     }),
     defineField({
       name: 'body',

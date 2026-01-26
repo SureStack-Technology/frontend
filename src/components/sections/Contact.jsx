@@ -74,51 +74,45 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Input */}
         <div>
-          <label htmlFor="name" className="block text-white font-semibold mb-2">Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={inputClasses}
-            placeholder="Your name"
-            required
-          />
+          <label htmlFor="name" className="block text-white form-label mb-2">Name</label>
+          <input id="name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className={inputClasses}
+                placeholder="Your name"
+                required />
         </div>
 
         {/* Email Input */}
         <div>
-          <label htmlFor="email" className="block text-white font-semibold mb-2">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className={inputClasses}
-            placeholder="your@email.com"
-            required
-          />
+          <label htmlFor="email" className="block text-white form-label mb-2">Email</label>
+          <input id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClasses}
+                placeholder="your@email.com"
+                required />
         </div>
 
         {/* Company Input */}
         <div>
-          <label htmlFor="company" className="block text-white font-semibold mb-2">Company</label>
-          <input
-            id="company"
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            className={inputClasses}
-            placeholder="Your company"
-          />
+          <label htmlFor="company" className="block text-white form-label mb-2">Company</label>
+          <input id="company"
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className={inputClasses}
+                placeholder="Your company" />
         </div>
 
         {/* Message Textarea */}
         <div>
-          <label htmlFor="message" className="block text-white font-semibold mb-2">Message</label>
+          <label htmlFor="message" className="block text-white form-label mb-2">Message</label>
           <textarea id="message"
                     name="message"
                     value={formData.message}
@@ -145,7 +139,7 @@ const ContactForm = () => {
         )}
 
         <button type="submit"
-                className="w-full bg-cyan-500 flex justify-center items-center hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition">
+                className="w-full bg-cyan-500 flex justify-center items-center hover:bg-cyan-600 text-white subheading py-3 rounded-lg transition">
           {status === 'submitting' ? (
               <>
                 <Loader2 className="animate-spin" size={20} />
@@ -165,7 +159,7 @@ const ContactForm = () => {
 const Contact = () => {
   return (
     <section id="contact" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>

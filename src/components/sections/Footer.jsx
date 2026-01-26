@@ -10,7 +10,7 @@ const FooterLinkColumn = ({ title, links }) => (
       <ul className="space-y-2">
           {links.map((link, index) => (
               <li key={index}>
-                  <a href={link.href} className="text-slate-400 hover:text-cyan-400 text-sm">{link.label}</a>
+                  <a href={link.href} className="font-subheading hover:text-cyan-400 text-sm">{link.label}</a>
               </li>
           ))}
       </ul>
@@ -42,9 +42,9 @@ const Footer = () => {
                 <div>
                     <div className="flex items-center mb-4">
                         <Shield className="h-8 w-8 text-cyan-400" />
-                        <span className="ml-2 text-xl font-bold text-white">Sure Stack RISK Protocol</span>
+                        <span className="ml-2 text-xl font-heading">Sure Stack RISK Protocol</span>
                     </div>
-                    <p className="text-slate-400 text-sm">
+                    <p className="font-subheading text-sm">
                         The first crypto risk assessment platform with real-time volatility integration.
                     </p>
                 </div>
@@ -79,14 +79,14 @@ const Footer = () => {
             </div>
 
             <div className="border-t border-slate-800 pt-8 text-center">
-                <p className="text-slate-400 text-sm">© 2025 SureStack. All rights reserved.</p>
+                <p className="font-heading text-sm">© 2025 SureStack. All rights reserved.</p>
                 <div className="flex space-x-6">
                     <button onClick={() => setShowTerms(true)} 
-                            className="text-slate-400 hover:text-cyan-400 text-sm">
+                            className="font-subheading hover:text-cyan-400 text-sm">
                         Terms of Use
                     </button>
                     <button onClick={() => setShowPrivacy(true)}
-                            className="text-slate-400 hover:text-cyan-400 text-sm">
+                            className="font-subheading hover:text-cyan-400 text-sm">
                         Privacy Policy
                     </button>
                 </div>

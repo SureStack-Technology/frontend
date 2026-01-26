@@ -13,10 +13,10 @@ const BlogPostCard = ({ post }) => (
   <article className="bg-slate-900 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400 transition">
     <img src={urlFor(post.mainImage).url()} alt="Image" className="w-full h-48 object-cover" />
     <div className="p-6">
-        <p className="text-cyan-400 text-sm mb-2">{dayjs(post.publishedAt).format('MMM D, YYYY')}</p>
+        <p className="text-cyan-400 font-subheading font-semibold mb-2">{dayjs(post.modified).format('MMM D, YYYY')}</p>
         <h3 className="text-xl font-bold text-white mb-3">{post.title}</h3>
         <p className="text-slate-300 mb-4">{post.excerpt}</p>
-        <a href="#" className="text-cyan-400 hover:text-cyan-300 font-semibold">
+        <a href={post.externalLink || '#'} target="_blank" className="text-cyan-400 font-subheading hover:text-cyan-300 font-semibold">
             Read More →
         </a>
     </div>
@@ -39,10 +39,10 @@ const Blog = () => {
 
     return (
         <section id="blog" className="py-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-white mb-4">Latest Insights</h2>
-                    <p className="text-xl text-slate-300">Stay updated with our latest research and developments</p>
+                    <p className="text-xl font-subheading">Stay updated with our latest research and developments</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
