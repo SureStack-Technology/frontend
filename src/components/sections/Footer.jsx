@@ -21,8 +21,8 @@ const Footer = () => {
 
   const productLinks = [
       { href: "#features", label: "Features" },
-      { href: "#", label: "Documentation" },
-      { href: "#", label: "Whitepaper" },
+    //   { href: "#", label: "Documentation" },
+    //   { href: "#", label: "Whitepaper" },
   ];
 
   const companyLinks = [

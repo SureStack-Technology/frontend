@@ -16,6 +16,7 @@ import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import Dashboard from './components/sections/Dashboard';
 import Documents from './components/sections/Documents';
+import Values from './components/sections/Values'
 
 import useAuthStore from './stores/useAuthStore';
 
@@ -43,6 +44,7 @@ const LandingPage = () => (
       <Hero />
       <Features />
       <Team />
+      <Values />
       <Blog />
       <EarlyBird />
       <Contact />

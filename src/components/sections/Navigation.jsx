@@ -17,6 +17,7 @@ const Navigation = () => {
     const navItems = [
         { type: 'anchor', href: "#features", label: "Features", protected: false  },
         { type: 'anchor', href: "#team", label: "Team", protected: false },
+        { type: 'anchor', href: "#our_values", label: "Values", protected: false },
         { type: 'anchor', href: "#blog", label: "Blog", protected: false },
         { type: 'anchor', href: "#earlybird", label: "Early Bird", protected: false },
         { type: 'anchor', href: "#contact", label: "Contact", protected: false },
