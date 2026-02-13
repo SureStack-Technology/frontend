@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { client } from "../../sanity.js";
 import { createImageUrlBuilder } from '@sanity/image-url';
 import dayjs from 'dayjs';
+import useLanguageStore from '../../stores/useLanguageStore';
 
 const builder = createImageUrlBuilder(client);
 function urlFor(source) {
@@ -28,6 +29,7 @@ const options = { next: { revalidate: 30 } };
 
 const Blog = () => {
 
+    const { t, language } = useLanguageStore();
     const [postData, setPost] = useState([]);
 
     useEffect(() => {
@@ -41,8 +43,8 @@ const Blog = () => {
         <section id="blog" className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-white mb-4">Latest Insights</h2>
-                    <p className="text-xl font-subheading">Stay updated with our latest research and developments</p>
+                    <h2 className="text-4xl font-bold text-white mb-4">{t('blog.heading')}</h2>
+                    <p className="text-xl font-subheading">{t('blog.sub')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

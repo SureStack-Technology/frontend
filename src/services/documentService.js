@@ -1,6 +1,30 @@
+import { client } from '../sanity';
+
 const XANO_BASE_URL = 'https://x8ki-letl-twmt.n7.xano.io/api:5m-n75rP'; 
 const DOCUMENTS_ENDPOINT = `${XANO_BASE_URL}/document`;
 const UPLOAD_ENDPOINT = `${XANO_BASE_URL}/upload/media`;
+
+/**
+ * Fetches all records of a specific type filtered by language
+ * 
+ * @param {strinf} sectionId - Section name (e.g. "values" or "features")
+ * @param {string} itemType - The _type in Sanity (e.g., "value" or "feature")
+ * @param {string} lang - The current language code (e.g., "en" or "es")
+ */
+export const fetchLocalizedRecords = async (sectionId, itemType, lang) => {
+
+    const query = `{
+        "metadata": *[_type == "section" && sectionId == $sectionId && language == $lang][0],
+        "items": *[_type == "${itemType}" && language == $lang] | order(order asc),
+        "advantages": *[_type == "advantage" && language == $lang] | order(order asc)
+    }`;
+    
+    const params = { sectionId, itemType, lang };
+    const results = await client.fetch(query, params);
+    return results;
+};
+
+
 /**
  * Fetches a list of protected document metadata from the Xano backend.
  * The endpoint is expected to return an array of document objects.

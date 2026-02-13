@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Github, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized contact information block
 const ContactInfoItem = ({ Icon, title, link, linkText }) => (
@@ -16,6 +17,8 @@ const ContactInfoItem = ({ Icon, title, link, linkText }) => (
 
 // Modularized contact form
 const ContactForm = () => {
+
+  const { t, language } = useLanguageStore();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -74,20 +77,20 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Input */}
         <div>
-          <label htmlFor="name" className="block text-white form-label mb-2">Name</label>
+          <label htmlFor="name" className="block text-white form-label mb-2">{t('contact.name')}</label>
           <input id="name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder="Your name"
+                placeholder={t('contact.name_placeholder')}
                 required />
         </div>
 
         {/* Email Input */}
         <div>
-          <label htmlFor="email" className="block text-white form-label mb-2">Email</label>
+          <label htmlFor="email" className="block text-white form-label mb-2">{t('contact.email')}</label>
           <input id="email"
                 type="email"
                 name="email"
@@ -100,26 +103,26 @@ const ContactForm = () => {
 
         {/* Company Input */}
         <div>
-          <label htmlFor="company" className="block text-white form-label mb-2">Company</label>
+          <label htmlFor="company" className="block text-white form-label mb-2">{t('contact.company')}</label>
           <input id="company"
                 type="text"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder="Your company" />
+                placeholder={t('contact.company_placeholder')} />
         </div>
 
         {/* Message Textarea */}
         <div>
-          <label htmlFor="message" className="block text-white form-label mb-2">Message</label>
+          <label htmlFor="message" className="block text-white form-label mb-2">{t('contact.message')}</label>
           <textarea id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
                     className={inputClasses}
-                    placeholder="Tell us about your needs..."
+                    placeholder={t('contact.message_placeholder')}
                     required></textarea>
         </div>
 
@@ -127,14 +130,14 @@ const ContactForm = () => {
         {status === 'success' && (
           <div className="p-3 bg-green-500/20 border border-green-500 rounded text-green-300 flex items-center gap-2">
             <CheckCircle size={18} />
-            <span>Success! We'll be in touch soon.</span>
+            <span>{t('contact.success')}</span>
           </div>
         )}
 
         {status === 'error' && (
           <div className="p-3 bg-red-500/20 border border-red-500 rounded text-red-300 flex items-center gap-2">
             <AlertCircle size={18} />
-            <span>Something went wrong. Please try again.</span>
+            <span>{t('contact.failure')}</span>
           </div>
         )}
 
@@ -143,10 +146,10 @@ const ContactForm = () => {
           {status === 'submitting' ? (
               <>
                 <Loader2 className="animate-spin" size={20} />
-                Sending...
+                {t('contact.sending')}
               </>
             ) : (
-              'Send Message'
+              t('contact.button')
             )
           }
         </button>
@@ -157,20 +160,22 @@ const ContactForm = () => {
 
 
 const Contact = () => {
+
+  const { t, language } = useLanguageStore();
+  
   return (
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>
+            <h2 className="text-4xl font-bold text-white mb-6">{t('contact.heading')}</h2>
             <p className="text-xl text-slate-300 mb-8">
-              Interested in partnering with us or learning more about the RISK Protocol?
-              We would love to hear from you.
+              {t('contact.sub')}
             </p>
 
             <div className="space-y-6">
               <ContactInfoItem Icon={Mail} 
-                              title="Email" 
+                              title={t('contact.email')} 
                               link="mailto:hello@surestack.tech" 
                               linkText="hello@surestack.tech" />
 
@@ -180,7 +185,7 @@ const Contact = () => {
                               linkText="github.com/surestack" />
 
               <ContactInfoItem Icon={Shield} 
-                              title="Website" 
+                              title="WWW" 
                               link="https://surestack.tech" 
                               linkText="surestack.tech" />
 

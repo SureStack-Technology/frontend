@@ -11,9 +11,27 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: 'Türkçe', value: 'tr' }
+        ]
+      },
+      validation: Rule => Rule.required()
+    }),
+    defineField({
       name: 'isRisk',
       title: 'Is Risk',
       type: 'boolean',
+    }),
+    defineField({
+      name: 'translationId',
+      title: 'Translation ID',
+      type: 'string',
+      description: 'Use the same ID for all translations of this record'
     }),
   ],
 })

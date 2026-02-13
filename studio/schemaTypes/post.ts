@@ -6,6 +6,18 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: 'Spanish', value: 'es' }
+        ]
+      },
+      validation: Rule => Rule.required()
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -57,6 +69,12 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+    }),
+    defineField({
+      name: 'translationId',
+      title: 'Translation ID',
+      type: 'string',
+      description: 'Use the same ID for all translations of this record'
     }),
     defineField({
       name: 'publishedAt',

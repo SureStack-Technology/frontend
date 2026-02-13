@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, Github, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized contact form
 const EarlyBirdForm = () => {
+
+  const { t, language } = useLanguageStore();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -61,20 +64,20 @@ const EarlyBirdForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name Input */}
         <div>
-          <label htmlFor="name" className="block text-white form-label mb-2">Name</label>
+          <label htmlFor="name" className="block text-white form-label mb-2">{t('earlybird.name')}</label>
           <input id="name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder="Your name"
+                placeholder={t('earlybird.name_placeholder')}
                 required />
         </div>
 
         {/* Email Input */}
         <div>
-          <label htmlFor="email" className="block text-white form-label mb-2">Email</label>
+          <label htmlFor="email" className="block text-white form-label mb-2">{t('earlybird.email')}</label>
           <input id="email"
                 type="email"
                 name="email"
@@ -87,26 +90,26 @@ const EarlyBirdForm = () => {
 
         {/* Company Input */}
         <div>
-          <label htmlFor="company" className="block text-white form-label mb-2">Company</label>
+          <label htmlFor="company" className="block text-white form-label mb-2">{t('earlybird.company')}</label>
           <input id="company"
                 type="text"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
                 className={inputClasses}
-                placeholder="Your company" />
+                placeholder={t('earlybird.company_placeholder')} />
         </div>
 
         {/* Message Textarea */}
         <div>
-          <label htmlFor="message" className="block text-white form-label mb-2">Message</label>
+          <label htmlFor="message" className="block text-white form-label mb-2">{t('earlybird.message')}</label>
           <textarea id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
                     className={inputClasses}
-                    placeholder="Tell us what you do ..."
+                    placeholder={t('earlybird.message_placeholder')}
                     required></textarea>
         </div>
 
@@ -114,28 +117,28 @@ const EarlyBirdForm = () => {
         {status === 'success' && (
           <div className="p-3 bg-green-500/20 border border-green-500 rounded text-green-300 flex items-center gap-2">
             <CheckCircle size={18} />
-            <span>Success! We'll be in touch soon.</span>
+            <span>{t('earlybird.success')}</span>
           </div>
         )}
 
         {status === 'error' && (
           <div className="p-3 bg-red-500/20 border border-red-500 rounded text-red-300 flex items-center gap-2">
             <AlertCircle size={18} />
-            <span>Something went wrong. Please try again.</span>
+            <span>{t('earlybird.failure')}</span>
           </div>
         )}
 
         {/* Submit Button */}
         <button type="submit"
                 disabled={status === 'submitting'}
-                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white subheading py-3 rounded-lg transition">
+                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white subheading py-3 rounded-lg transition flex items-center justify-center gap-2">
           {status === 'submitting' ? (
             <>
               <Loader2 className="animate-spin" size={20} />
-              Sending...
+              {t('earlybird.sending')}
             </>
           ) : (
-            'Sign me up'
+            t('earlybird.button')
           )}
         </button>
       </form>
@@ -145,11 +148,14 @@ const EarlyBirdForm = () => {
 
 
 const EarlyAdoption = () => {
+
+  const { t, language } = useLanguageStore();
+
   return (
     <section id="earlybird" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Early Adoption Program</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">{t('earlybird.heading')}</h2>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto"></p>
         </div>
 
@@ -160,16 +166,15 @@ const EarlyAdoption = () => {
             <div className="space-y-6 text-white">
               <div className="flex flex-col gap-4 text-slate-300">
                 <p className="text-lg">
-                  If you are interested in joining our early adoption program to receive updates and benefits, 
-                  please fill out this form and we will be in touch.
+                  {t('earlybird.sub1')}
                 </p>
                 <div className="flex items-center gap-3 mt-4">
                   <Shield className="text-cyan-400" />
-                  <span>Secure Data Handling</span>
+                  <span>{t('earlybird.sub2')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                    <Mail className="text-cyan-400" />
-                   <span>Direct Priority Support</span>
+                   <span>{t('earlybird.sub3')}</span>
                 </div>
               </div>
             </div>

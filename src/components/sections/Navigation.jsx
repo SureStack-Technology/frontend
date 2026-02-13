@@ -1,29 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Menu, X, Shield, LogIn, LogOut } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import LoginModal from '../auth/LoginModal';
 import useAuthStore from "../../stores/useAuthStore";
+import useLanguageStore from '../../stores/useLanguageStore';
+import LanguageSwitcher from '../common/LanguageSwitcher';
 
 const Navigation = () => {
 
     const pathname = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false); // State for the Login Modal
+    const { t, language } = useLanguageStore();
 
     // Get state and action from Zustand
     const { isLoggedIn, user, logout } = useAuthStore();
     
     // Define navigation items. Use 'to' for internal Link routes, 'href' for external or section anchors.
     const navItems = [
-        { type: 'anchor', href: "#features", label: "Features", protected: false  },
-        { type: 'anchor', href: "#team", label: "Team", protected: false },
-        { type: 'anchor', href: "#our_values", label: "Values", protected: false },
-        { type: 'anchor', href: "#blog", label: "Blog", protected: false },
-        { type: 'anchor', href: "#earlybird", label: "Early Bird", protected: false },
-        { type: 'anchor', href: "#contact", label: "Contact", protected: false },
-        { type: 'route', to: "/dashboard", label: "Dashboard", protected: true },
-        { type: 'route', to: "/documents", label: "Documents", protected: true },
-        { type: 'route', to: "https://poc.surestack.tech", label: "Concept", protected: true },
+        { type: 'anchor', href: "#features", label: t('nav.features'), protected: false  },
+        { type: 'anchor', href: "#team", label: t('nav.team'), protected: false },
+        { type: 'anchor', href: "#our_values", label: t('nav.values'), protected: false },
+        { type: 'anchor', href: "#blog", label: t('nav.blog'), protected: false },
+        { type: 'anchor', href: "#earlybird", label: t('nav.early_bird'), protected: false },
+        { type: 'anchor', href: "#contact", label: t('nav.contact'), protected: false },
+        { type: 'route', to: "/dashboard", label: t('nav.dashboard'), protected: true },
+        { type: 'route', to: "/documents", label: t('nav.documents'), protected: true },
+        { type: 'route', to: "https://poc.surestack.tech", label: t('nav.concept'), protected: true },
     ];
 
     const handleLogout = () => {
@@ -84,6 +87,7 @@ const Navigation = () => {
         <>
         <nav className="fixed w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
                         <Shield className="h-8 w-8 text-neon-cyan" />
@@ -97,15 +101,14 @@ const Navigation = () => {
                         {/* Standard Links */}
                         {navItems.map((item, index) => <NavLinkItem key={index} item={item} />)}
 
+                        <LanguageSwitcher />
+
                         {/* Conditional Login/Logout Button */}
                         {isLoggedIn ? (
-                            <>
-                            {/* <span className="text-slate-400 text-sm">Hello, {user?.name || user?.email}</span> */}
                             <button onClick={handleLogout} 
                                     className="flex items-center text-red-400 hover:text-red-300 font-semibold font-subheading transition">
                                 <LogOut className="w-5 h-5 mr-1" /> Logout
                             </button>
-                            </>
                         ) : (
                             <button onClick={() => setIsModalOpen(true)} 
                                     className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-subheading font-semibold transition flex items-center">

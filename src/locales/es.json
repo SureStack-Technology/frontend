@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "values": "Valores",
+    "team": "Equipo",
+    "blog": "Blog",
+    "launch_app": "Iniciar App"
+  },
+  "hero": {
+    "head1": "El futuro de ",
+    "head2": "Evaluación de riesgos de criptomonedas",
+    "sub": "Primera y única plataforma que integra la volatilidad del mercado en tiempo real en la calificación de riesgo y la fijación de precios de seguros. Se actualiza cada 30 segundos, mientras que la competencia lo hace a diario.",
+    "learn-more": "Más información >",
+    "get-started": "Comienza",
+    "faster": "Actualizaciones de riesgos más rápidas que la competencia",
+    "accuracy": "Tasa de precisión de las reclamaciones",
+    "realtime": "Monitoreo en tiempo real"
+  },
+  "features": {
+    "heading": "¿Por qué el Protocolo RISK?",
+    "sub": "¿La única plataforma que combina el análisis de volatilidad en tiempo real con la evaluación de riesgos descentralizada?"
+  },
+  "advantages": {
+    "heading": "Ventaja competitiva",
+    "sub1": "Competidores tradicionales",
+    "sub2": "Protocolo RISK"
+  },
+  "values": {
+    "heading": "Nuestras Valores",
+    "sub": "Si existe una razón para la existencia de las criptomonedas, esta debe derivar de la confianza en el mercado. Para ello, hemos inculcado las siguientes creencias en nuestra organización."
+  },
+  "blog": {
+    "heading": "Últimas noticias",
+    "sub": "Manténgase al día con nuestras últimas investigaciones y desarrollos"
+  },
+  "earlybird": {
+    "heading": "Programa de Adopción Temprana",
+    "sub1": "Si le interesa unirse a nuestro programa de adopción temprana para recibir actualizaciones y beneficios, complete este formulario y nos pondremos en contacto con usted.",
+    "sub2": "Manejo Seguro de Datos",
+    "sub3": "Soporte Prioritario Directo",
+    "name": "Nombre",
+    "name_placeholder": "Ingresa tu nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "company_placeholder": "Ingresa tu empresa",
+    "message": "Mensaje",
+    "message_placeholder": "Cuéntanos tus objetivos",
+    "button": "Suscríbeme",
+    "success": "¡Éxito! Nos pondremos en contacto contigo pronto.",
+    "failure": "Algo salió mal. Inténtalo de nuevo.",
+    "sending": "Enviando..."
+  },
+  "contact": {
+    "heading": "Programa de Adopción Temprana",
+    "sub": "Si te interesa unirte a nuestro programa de adopción temprana para recibir actualizaciones y beneficios, completa este formulario y nos pondremos en contacto contigo.",
+    "name": "Nombre",
+    "name_placeholder": "Introduce tu nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "company_placeholder": "Introduce tu empresa",
+    "message": "Mensaje",
+    "message_placeholder": "Cuéntanos tus objetivos",
+    "button": "Suscríbeme",
+    "success": "¡Lo lograste! Nos pondremos en contacto contigo pronto.",
+    "failure": "Algo salió mal. Inténtalo de nuevo.",
+    "sending": "Enviando..."
+  },
+  "footer": {
+    "product": "Producto",
+    "company": "Empresa",
+    "connect": "Conectar",
+    "sub": "La primera plataforma de evaluación de riesgos de criptomonedas con integración de volatilidad en tiempo real.",
+    "terms": "Condiciones de uso",
+    "privacy": "Política de privacidad",
+    "copyright": "© 2025 SureStack. Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error"
+  }
+}

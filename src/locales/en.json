@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "features": "Features",
+    "values": "Values",
+    "team": "Team",
+    "blog": "Blog",
+    "early_bird": "Early Bird",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "documents": "Documents",
+    "concept": "Concept"
+  },
+  "hero": {
+    "head1": "The Future of ",
+    "head2": "Crypto Risk Assessment",
+    "sub": "First and only platform integrating real-time market volatility into risk scoring and insurance pricing. Updates every 30 seconds while competitors update daily.",
+    "learn-more": "Learn More >",
+    "get-started": "Get Started",
+    "faster": "Faster risk updates than competitiors",
+    "accuracy": "Claims accuracy rate",
+    "realtime": "Real-time monitoring"
+  },
+  "features": {
+    "heading": "Why RISK Protocol?",
+    "sub": "The only platform that combines real-time volatility analysis with decentralized risk assessment?"
+  },
+  "advantages": {
+    "heading": "Competitive Advantage",
+    "sub1": "Traditional Competitors",
+    "sub2": "RISK Protocol"
+  },
+  "values": {
+    "heading": "Our Values",
+    "sub": "If there is a reason for cryptocurrency to exist, it must derive from confidence in the market. To this end we have instilled the following beliefs in out organisation."
+  },
+  "blog": {
+    "heading": "Latest Insights",
+    "sub": "Stay updated with our latest research and developments"
+  },
+  "earlybird": {
+    "heading": "Get in touch with us",
+    "sub1": "Interested in partnering with us or learning more about the RISK Protocol? We would love to hear from you.",
+    "sub2": "Secure Data Handling",
+    "sub3": "Direct Priority Support",
+    "name": "Name",
+    "name_placeholder": "enter your name",
+    "email": "Email",
+    "company": "Company",
+    "company_placeholder": "enter your company",
+    "message": "message",
+    "message_placeholder": "Tell us your objectives",
+    "button": "Sign me up",
+    "success": "Success! We'll be in touch soon.",
+    "failure": "Something went wrong. Please try again.",
+    "sending": "Sending ..."
+  },
+  "contact": {
+    "heading": "Early Adoption Program",
+    "sub": "If you are interested in joining our early adoption program to receive updates and benefits, please fill out this form and we will be in touch.",
+    "name": "Name",
+    "name_placeholder": "enter your name",
+    "email": "Email",
+    "company": "Company",
+    "company_placeholder": "enter your company",
+    "message": "message",
+    "message_placeholder": "Tell us your objectives",
+    "button": "Sign me up",
+    "success": "Success! We'll be in touch soon.",
+    "failure": "Something went wrong. Please try again.",
+    "sending": "Sending ..."
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "connect": "Connect",
+    "sub": "The first crypto risk assessment platform with real-time volatility integration.",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2025 SureStack. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+}

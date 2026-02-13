@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "features": "özellikler",
+    "values": "Değerler",
+    "team": "Takım",
+    "blog": "Blog",
+    "early_bird": "Erken kuş",
+    "contact": "Bağlantı",
+    "dashboard": "Gösterge paneli",
+    "documents": "Belgeler",
+    "concept": "kavram"
+  },
+  "hero": {
+    "head1": "Kripto Paranın Geleceği ",
+    "head2": "Kripto Para Risk Değerlendirmesi",
+    "sub": "Gerçek zamanlı piyasa oynaklığını risk puanlamasına ve sigorta fiyatlandırmasına entegre eden ilk ve tek platform. Rakipleri günlük olarak güncellerken, bu platform her 30 saniyede bir güncellenir.",
+    "learn-more": "Daha Fazla Bilgi Edinin >",
+    "get-started": "Başlayın",
+    "faster": "Rakiplerden daha hızlı risk güncellemeleri",
+    "accuracy": "Talep doğruluk oranı",
+    "realtime": "Gerçek zamanlı izleme"
+  },
+  "features": {
+    "heading": "Neden RISK Protokolü?",
+    "sub": "Gerçek zamanlı volatilite analizini merkeziyetsiz risk değerlendirmesiyle birleştiren tek platform?"
+  },
+  "advantages": {
+    "heading": "Rekabet Avantajı",
+    "sub1": "Geleneksel Rakipler",
+    "sub2": "RISK Protokolü"
+  },
+  "values": {
+    "heading": "Değerlerimiz",
+    "sub": "Kripto paraların var olma sebebi varsa, bu sebep piyasaya duyulan güvenden kaynaklanmalıdır. Bu amaçla, kuruluşumuzda aşağıdaki inançları yerleştirdik."
+  },
+  "blog": {
+    "heading": "En Son Bulgular",
+    "sub": "En son araştırmalarımız ve gelişmelerimizden haberdar olun"
+  },
+  "earlybird": {
+    "heading": "Erken Benimseme Programı",
+    "sub1": "Güncellemeler ve avantajlar almak için erken benimseme programımıza katılmakla ilgileniyorsanız, lütfen bu formu doldurun ve sizinle iletişime geçeceğiz.",
+    "sub2": "Güvenli Veri İşleme",
+    "sub3": "Doğrudan Öncelikli Destek",
+    "name": "İsim",
+    "name_placeholder": "Adınızı girin",
+    "email": "E-posta",
+    "company": "Şirket",
+    "company_placeholder": "Şirket adınızı girin",
+    "message": "Mesaj",
+    "message_placeholder": "Hedeflerinizi bize bildirin",
+    "button": "Beni kaydet",
+    "success": "Başarılı! Yakında sizinle iletişime geçeceğiz.",
+    "failure": "Bir sorun oluştu. Lütfen tekrar deneyin.",
+    "Gönderiliyor": "Gönderiliyor..."
+  },
+  "contact": {
+    "heading": "Erken Benimseme Programı",
+    "sub": "Güncellemeler ve avantajlar almak için erken benimseme programımıza katılmakla ilgileniyorsanız, lütfen bu formu doldurun ve sizinle iletişime geçeceğiz.",
+    "name": "İsim",
+    "name_placeholder": "Adınızı girin",
+    "email": "E-posta",
+    "company": "Şirket",
+    "company_placeholder": "Şirket adınızı girin",
+    "message": "Mesaj",
+    "message_placeholder": "Hedeflerinizi bize bildirin",
+    "button": "Beni kaydet",
+    "success": "Başarılı! Yakında sizinle iletişime geçeceğiz.",
+    "failure": "Bir sorun oluştu. Lütfen tekrar deneyin.",
+    "sending": "Gönderiliyor..."
+  },
+  "footer": {
+    "product": "Ürün",
+    "company": "Şirket",
+    "connect": "Bağlan",
+    "sub": "Gerçek zamanlı volatilite entegrasyonuna sahip ilk kripto risk değerlendirme platformu.",
+    "terms": "Kullanım Şartları",
+    "privacy": "Gizlilik Politikası",
+    "copyright": "© 2025 SureStack. Tüm hakları saklıdır."
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "hata"
+  }
+}

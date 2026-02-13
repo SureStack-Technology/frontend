@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PrivacyPolicyModal from "../common/PrivacyPolicyModal";
 import TermsOfUseModal from "../common/TermsOfUseModal";
 import { Shield, Twitter, Github, Linkedin, Youtube } from 'lucide-react';
+import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized Footer Link Column
 const FooterLinkColumn = ({ title, links }) => (
@@ -19,20 +20,22 @@ const FooterLinkColumn = ({ title, links }) => (
 
 const Footer = () => {
 
-  const productLinks = [
-      { href: "#features", label: "Features" },
-    //   { href: "#", label: "Documentation" },
-    //   { href: "#", label: "Whitepaper" },
-  ];
+    const { t, language } = useLanguageStore();
 
-  const companyLinks = [
-      { href: "#team", label: "Team" },
-      { href: "#blog", label: "Blog" },
-      { href: "#contact", label: "Contact" },
-  ];
+    const productLinks = [
+        { href: "#features", label: t('nav.features') },
+        //   { href: "#", label: "Documentation" },
+        //   { href: "#", label: "Whitepaper" },
+    ];
 
-  const [showTerms, setShowTerms] = useState(false);
-  const [showPrivacy, setShowPrivacy] = useState(false);
+    const companyLinks = [
+        { href: "#team", label: t('nav.team') },
+        { href: "#blog", label: t('nav.blog') },
+        { href: "#contact", label: t('nav.contact') },
+    ];
+
+    const [showTerms, setShowTerms] = useState(false);
+    const [showPrivacy, setShowPrivacy] = useState(false);
 
   return (
     <>
@@ -45,16 +48,16 @@ const Footer = () => {
                         <span className="ml-2 text-xl font-heading">Sure Stack RISK Protocol</span>
                     </div>
                     <p className="font-subheading text-sm">
-                        The first crypto risk assessment platform with real-time volatility integration.
+                        {t('footer.sub')}
                     </p>
                 </div>
 
-                <FooterLinkColumn title="Product" links={productLinks} />
-                <FooterLinkColumn title="Company" links={companyLinks} />
+                <FooterLinkColumn title={t('footer.product')} links={productLinks} />
+                <FooterLinkColumn title={t('footer.company')} links={companyLinks} />
 
                 {/* Connection Column */}
                 <div>
-                    <h3 className="text-white font-semibold mb-4">Connect</h3>
+                    <h3 className="text-white font-semibold mb-4">{t('footer.connect')}</h3>
                     <div className="flex space-x-4">
                         <a href="https://x.com/sure_stack?s=11" target="_blank" className="text-slate-400 hover:text-cyan-400">
                             <Twitter size={32} color="#ffffff"/>
@@ -72,22 +75,22 @@ const Footer = () => {
                             <img alt="Medium" width="84" height="84" src="https://wakadigital.systems/surestack/assets/icons/medium_icon_white.png"/>    
                         </a>
                         <a href="https://telegram.org/@SureStackOfficial" target="_blank" className="text-slate-400 hover:text-cyan-400">
-                            <img alt="Telegram" width="84" height="84" src="https://wakadigital.systems/surestack/assets/icons/telegram_icon_outline.png" />
+                            <img alt="Telegram" width="84" height="84" src="https://wakadigital.systems/surestack/assets/icons/telegram_icon_white.png" />
                         </a>
                     </div>
                 </div>
             </div>
 
             <div className="border-t border-slate-800 pt-8 text-center">
-                <p className="font-heading text-sm">© 2025 SureStack. All rights reserved.</p>
+                <p className="font-heading text-sm">{t('footer.copyright')}</p>
                 <div className="flex space-x-6">
                     <button onClick={() => setShowTerms(true)} 
                             className="font-subheading hover:text-cyan-400 text-sm">
-                        Terms of Use
+                        {t('footer.terms')}
                     </button>
                     <button onClick={() => setShowPrivacy(true)}
                             className="font-subheading hover:text-cyan-400 text-sm">
-                        Privacy Policy
+                        {t('footer.privacy')}
                     </button>
                 </div>
             </div>

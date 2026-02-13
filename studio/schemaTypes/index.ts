@@ -5,5 +5,6 @@ import author from './author'
 import feature from './feature'
 import advantage from './advantage'
 import value from './value'
+import section from './section'
 
-export const schemaTypes = [post, author, category, blockContent, feature, advantage, value]
+export const schemaTypes = [post, author, category, blockContent, feature, advantage, value, section]

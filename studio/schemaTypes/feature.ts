@@ -6,6 +6,18 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: 'Türkçe', value: 'tr' }
+        ]
+      },
+      validation: Rule => Rule.required()
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -22,7 +34,10 @@ export default defineType({
     defineField({
       name: 'icon',
       title: 'Icon',
-      type: 'lucide-icon',
+      type: 'iconPicker',
+      options: {
+        storeSvg: true
+      }
     }),
     defineField({
       name: 'author',
@@ -34,6 +49,12 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'blockContent',
+    }),
+    defineField({
+      name: 'translationId',
+      title: 'Translation ID',
+      type: 'string',
+      description: 'Use the same ID for all translations of this record'
     }),
     defineField({
       name: 'publishedAt',
