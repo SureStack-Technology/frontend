@@ -40,9 +40,6 @@ const useLanguageStore = create((set, get) => ({
   initialised: false,
 
   setLanguage: async (newLang) => {
-
-    console.log("Set: ",newLang);
-    
     
     set({ 
       language: newLang, 
