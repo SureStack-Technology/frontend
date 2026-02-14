@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home_title": "RISK 协议 | 实时加密货币风险评估",
+    "home_description": "首个将实时市场波动性融入风险评分的 DeFi 平台。每 30 秒更新一次。",
+    "dashboard_title": "风险终端 | 实时监控",
+    "keywords": "加密货币、风险、协议、区块链、实时、波动性"
+  },
   "nav": {
     "features": "核心功能",
     "values": "核心价值",

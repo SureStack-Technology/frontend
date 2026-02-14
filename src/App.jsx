@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 
 
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-
+import { HelmetProvider } from 'react-helmet-async';
 import useLanguageStore from "./stores/useLanguageStore";
 import ParticleBackground from "./components/common/ParticleBackground";
 import Navigation from "./components/sections/Navigation";
+import SEO from './components/common/SEO';
 import Hero from "./components/sections/Hero";
 import Features from "./components/sections/Features";
 import Team from "./components/sections/Team";
@@ -40,6 +41,7 @@ const PrivateRoute = ({ element: Element }) => {
 // Main Landing Page Component (combines all public sections)
 const LandingPage = () => (
     <main>
+      <SEO titleKey="seo.home_title" descriptionKey="seo.home_description" />
       <Hero />
       <Features />
       <Team />
@@ -83,10 +85,12 @@ const App = () => {
     }, [initLanguage]);
 
     return (
-        <Router>
-            <ParticleBackground />
-            <AppContent />
-        </Router>
+        <HelmetProvider>
+            <Router>
+                <ParticleBackground />
+                <AppContent />
+            </Router>
+        </HelmetProvider>
     );
 };
 

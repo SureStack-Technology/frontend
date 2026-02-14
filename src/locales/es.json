@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home_title": "Protocolo RISK | Evaluación de Riesgos de Criptomonedas en Tiempo Real",
+    "home_description": "La primera plataforma DeFi que integra la volatilidad del mercado en tiempo real en la puntuación de riesgo. Actualización cada 30 segundos.",
+    "dashboard_title": "Terminal de Riesgo | Monitoreo en Vivo",
+    "keywords": "cripto, riesgo, protocolo, blockchain, tiempo real, volatilidad"
+  },
   "nav": {
     "features": "Funcionalidades",
     "values": "Valores",

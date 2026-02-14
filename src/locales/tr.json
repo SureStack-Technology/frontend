@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home_title": "RISK Protokolü | Gerçek Zamanlı Kripto Risk Değerlendirmesi",
+    "home_description": "Gerçek zamanlı piyasa oynaklığını risk puanlamasına entegre eden ilk DeFi platformu. Her 30 saniyede bir güncellenir.",
+    "dashboard_title": "Risk Terminali | Canlı İzleme",
+    "keywords": "kripto, risk, protokol, blok zinciri, gerçek zamanlı, oynaklık"
+  },
   "nav": {
     "features": "özellikler",
     "values": "Değerler",

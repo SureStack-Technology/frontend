@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home_title": "RISK-Protokoll | Krypto-Risikobewertung in Echtzeit",
+    "home_description": "Die erste DeFi-Plattform, die Marktvolatilität in Echtzeit in die Risikobewertung integriert. Aktualisierung alle 30 Sekunden.",
+    "dashboard_title": "Risiko-Terminal | Live-Überwachung",
+    "keywords": "Krypto, Risiko, Protokoll, Blockchain, Echtzeit, Volatilität"
+  },
   "nav": {
     "features": "Funktionen",
     "values": "Werte",

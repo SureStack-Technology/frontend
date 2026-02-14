@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "home_title": "RISK Protocol | Real-Time Crypto Risk Assessment",
+    "home_description": "The first DeFi platform integrating real-time market volatility into risk scoring. Update every 30 seconds.",
+    "dashboard_title": "Risk Terminal | Live Monitoring",
+    "keywords": "crypto, risk, protocol, blockchain, real-time, volatility"
+  },
   "nav": {
     "features": "Features",
     "values": "Values",
