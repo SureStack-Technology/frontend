@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Check } from 'lucide-react';
 import SVG from 'react-inlinesvg';
 import Advantages from './Advantages';
 import useLanguageStore from '../../stores/useLanguageStore';
@@ -52,8 +51,6 @@ const Features = () => {
     const { t, language } = useLanguageStore();
     const { data = {}, loading, initialized } = useLanguageStore();
     const { metadata, items: featureData = [], advantages: advantageData = [] } = data.features || {};
-
-    console.log(advantageData);
     
     if (loading && !initialized) {
         return <div className="py-20 text-center text-white">Loading Security Protocols...</div>;

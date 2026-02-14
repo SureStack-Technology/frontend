@@ -11,8 +11,12 @@ export default defineType({
       type: 'string',
       options: {
         list: [
+          { title: 'Arabic', value: 'ar' },
+          { title: 'Duetsh', value: 'de' },
           { title: 'English', value: 'en' },
-          { title: 'Spanish', value: 'es' }
+          { title: 'French', value: 'fr' },
+          { title: 'Türkçe', value: 'tr' },
+          { title: 'Mandarin', value: 'zh' }
         ]
       },
       validation: Rule => Rule.required()

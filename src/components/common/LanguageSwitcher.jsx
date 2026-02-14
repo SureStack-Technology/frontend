@@ -8,9 +8,12 @@ const LanguageSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const languages = [
+        { code: 'ar', label: 'اللغة العربية' },
+        { code: 'de', label: 'Deutsch' },
         { code: 'en', label: 'English' },
+        { code: 'fr', label: 'Français' },
         { code: 'tr', label: 'Türkçe' },
-        // Add more as needed
+        { code: 'zh', label: '普通话' },
     ];
 
     const handleSelect = (code) => {
@@ -33,9 +36,8 @@ const LanguageSwitcher = () => {
                         {languages.map((lang) => (
                             <button key={lang.code}
                                 onClick={() => handleSelect(lang.code)}
-                                className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-800 transition-colors ${
-                                    language === lang.code ? 'text-cyan-400' : 'text-white'
-                                }`}>
+                                className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-800 transition-colors 
+                                    ${language === lang.code ? 'text-cyan-400' : 'text-white'}`}>
                                 {lang.label}
                             </button>
                         ))}

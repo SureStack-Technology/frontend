@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "values": "Werte",
+    "team": "Team",
+    "blog": "Blog",
+    "early_bird": "Early Bird",
+    "contact": "Kontakt",
+    "dashboard": "Dashboard",
+    "documents": "Dokumente",
+    "concept": "Konzept"
+  },
+  "hero": {
+    "head1": "Die Zukunft der ",
+    "head2": "Krypto-Risikobewertung",
+    "sub": "Die erste und einzige Plattform, die Echtzeit-Marktvolatilität in das Risikoscoring und die Versicherungsprämien integriert. Updates alle 30 Sekunden, während Wettbewerber nur täglich aktualisieren.",
+    "learn-more": "Mehr erfahren >",
+    "get-started": "Jetzt starten",
+    "faster": "Schnellere Risiko-Updates als die Konkurrenz",
+    "accuracy": "Genauigkeitsrate der Ansprüche",
+    "realtime": "Echtzeit-Überwachung"
+  },
+  "features": {
+    "heading": "Warum RISK Protocol?",
+    "sub": "Die einzige Plattform, die Echtzeit-Volatilitätsanalysen mit dezentraler Risikobewertung kombiniert."
+  },
+  "advantages": {
+    "heading": "Wettbewerbsvorteil",
+    "sub1": "Traditionelle Wettbewerber",
+    "sub2": "RISK Protocol"
+  },
+  "values": {
+    "heading": "Unsere Werte",
+    "sub": "Wenn es einen Grund für die Existenz von Kryptowährungen gibt, muss dieser aus dem Vertrauen in den Markt resultieren. Zu diesem Zweck haben wir unserer Organisation die folgenden Überzeugungen eingeimpft."
+  },
+  "blog": {
+    "heading": "Aktuelle Einblicke",
+    "sub": "Bleiben Sie auf dem Laufenden mit unseren neuesten Forschungen und Entwicklungen"
+  },
+  "earlybird": {
+    "heading": "Kontaktieren Sie uns",
+    "sub1": "Haben Sie Interesse an einer Partnerschaft oder möchten Sie mehr über das RISK Protocol erfahren? Wir freuen uns, von Ihnen zu hören.",
+    "sub2": "Sicherer Umgang mit Daten",
+    "sub3": "Direkter Priority-Support",
+    "name": "Name",
+    "name_placeholder": "Geben Sie Ihren Namen ein",
+    "email": "E-Mail",
+    "company": "Unternehmen",
+    "company_placeholder": "Geben Sie Ihr Unternehmen ein",
+    "message": "Nachricht",
+    "message_placeholder": "Erzählen Sie uns von Ihren Zielen",
+    "button": "Anmelden",
+    "success": "Erfolg! Wir werden uns in Kürze melden.",
+    "failure": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "sending": "Wird gesendet ..."
+  },
+  "contact": {
+    "heading": "Early Adoption Programm",
+    "sub": "Wenn Sie an unserem Early Adoption Programm teilnehmen möchten, um Updates und Vorteile zu erhalten, füllen Sie bitte dieses Formular aus. Wir werden uns dann bei Ihnen melden.",
+    "name": "Name",
+    "name_placeholder": "Geben Sie Ihren Namen ein",
+    "email": "E-Mail",
+    "company": "Unternehmen",
+    "company_placeholder": "Geben Sie Ihr Unternehmen ein",
+    "message": "Nachricht",
+    "message_placeholder": "Erzählen Sie uns von Ihren Zielen",
+    "button": "Anmelden",
+    "success": "Erfolg! Wir werden uns in Kürze melden.",
+    "failure": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "sending": "Wird gesendet ..."
+  },
+  "footer": {
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "connect": "Verbinden",
+    "sub": "Die erste Plattform für Krypto-Risikobewertung mit Echtzeit-Volatilitätsintegration.",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "copyright": "© 2025 SureStack. Alle Rechte vorbehalten."
+  },
+  "common": {
+    "loading": "Ladevorgang...",
+    "error": "Ein Fehler ist aufgetreten"
+  }
+}

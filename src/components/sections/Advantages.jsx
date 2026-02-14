@@ -9,7 +9,7 @@ const CompetitiveAdvantage = ({ advantageData = [] }) => {
     const riskProtocol = advantageData.filter(item => !item.isRisk);
 
     return (
-        <div className="mt-16 bg-gradient-to-r from-cyan-900/30 to-blue-900/30 p-8 rounded-xl border border-cyan-800">
+        <div className="mt-16 bg-linear-to-r from-cyan-900/30 to-blue-900/30 p-8 rounded-xl border border-cyan-800">
             <h3 className="text-2xl font-bold text-white mb-6">{t('advantages.heading')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Traditional Column */}
@@ -30,7 +30,7 @@ const CompetitiveAdvantage = ({ advantageData = [] }) => {
                     <ul className="space-y-2 font-subheading text-lg text-slate-300">
                         {riskProtocol.map((item, i) => (
                             <li key={i} className="flex items-start">
-                                <Check className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" /> 
+                                <Check className="w-5 h-5 text-green-400 mr-2 mt-0.5 shrink-0" /> 
                                 {item.text}
                             </li>
                         ))}

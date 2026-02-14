@@ -1,11 +1,15 @@
 import { create } from 'zustand';
 import { fetchLocalizedRecords } from '../services/documentService';
 
+import ar from '../locales/ar.json';
+import de from '../locales/de.json';
 import en from '../locales/en.json';
 import es from '../locales/es.json';
+import fr from '../locales/fr.json';
 import tr from '../locales/tr.json';
+import zh from '../locales/zh.json';
 
-const locales = { en, es, tr };
+const locales = { ar, de, en, es, fr, tr, zh };
 
 /**
  * 1. Check if user previously selected a language in this browser

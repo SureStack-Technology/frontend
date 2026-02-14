@@ -8,8 +8,12 @@ export default {
     { name: 'language', type: 'string', title: 'Language',
       options: {
         list: [
+            { title: 'Arabic', value: 'ar' },
+            { title: 'Duetsh', value: 'de' },
             { title: 'English', value: 'en' },
-            { title: 'Türkçe', value: 'tr' }
+            { title: 'French', value: 'fr' },
+            { title: 'Türkçe', value: 'tr' },
+            { title: 'Mandarin', value: 'zh' }
         ]
       },
       validation: (Rule: Rule) => Rule.required()

@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "features": "核心功能",
+    "values": "核心价值",
+    "team": "团队介绍",
+    "blog": "官方博客",
+    "early_bird": "早鸟计划",
+    "contact": "联系我们",
+    "dashboard": "控制面板",
+    "documents": "技术文档",
+    "concept": "核心概念"
+  },
+  "hero": {
+    "head1": "开启 ",
+    "head2": "加密资产风险评估新纪元",
+    "sub": "全球首家且唯一将实时市场波动率整合至风险评分与保险定价的平台。我们每 30 秒更新一次数据，而竞争对手仍停留在每日更新。",
+    "learn-more": "了解更多 >",
+    "get-started": "立即开始",
+    "faster": "风险更新速度领先同行",
+    "accuracy": "理赔准确率",
+    "realtime": "实时监测中"
+  },
+  "features": {
+    "heading": "为何选择 RISK Protocol？",
+    "sub": "唯一将实时波动率分析与去中心化风险评估完美结合的平台。"
+  },
+  "advantages": {
+    "heading": "竞争优势",
+    "sub1": "传统竞争对手",
+    "sub2": "RISK Protocol"
+  },
+  "values": {
+    "heading": "核心价值",
+    "sub": "加密货币存在的根基源于对市场的信心。为此，我们将以下信念深植于组织架构之中。"
+  },
+  "blog": {
+    "heading": "最新洞察",
+    "sub": "获取我们的最新研究成果与开发进展"
+  },
+  "earlybird": {
+    "heading": "与我们取得联系",
+    "sub1": "有兴趣成为合作伙伴或深入了解 RISK Protocol？我们期待您的垂询。",
+    "sub2": "安全数据处理",
+    "sub3": "直接优先技术支持",
+    "name": "姓名",
+    "name_placeholder": "请输入您的姓名",
+    "email": "电子邮箱",
+    "company": "公司名称",
+    "company_placeholder": "请输入您的公司名称",
+    "message": "留言内容",
+    "message_placeholder": "请告诉我们您的目标",
+    "button": "立即加入",
+    "success": "提交成功！我们将尽快与您联系。",
+    "failure": "提交失败，请重试。",
+    "sending": "正在发送..."
+  },
+  "contact": {
+    "heading": "早鸟体验计划",
+    "sub": "如果您有兴趣加入我们的早期体验计划并获得专属更新与权益，请填写此表单，我们将与您联系。",
+    "name": "姓名",
+    "name_placeholder": "请输入您的姓名",
+    "email": "电子邮箱",
+    "company": "公司名称",
+    "company_placeholder": "请输入您的公司名称",
+    "message": "留言内容",
+    "message_placeholder": "请告诉我们您的目标",
+    "button": "立即加入",
+    "success": "提交成功！我们将尽快与您联系。",
+    "failure": "提交失败，请重试。",
+    "sending": "正在发送..."
+  },
+  "footer": {
+    "product": "产品中心",
+    "company": "关于公司",
+    "connect": "社交媒体",
+    "sub": "首个整合实时波动率数据的加密风险评估平台。",
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "copyright": "© 2025 SureStack. 保留所有权利。"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误"
+  }
+}
