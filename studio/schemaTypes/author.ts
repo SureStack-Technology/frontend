@@ -11,6 +11,22 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Arabic', value: 'ar' },
+          { title: 'Duetsh', value: 'de' },
+          { title: 'English', value: 'en' },
+          { title: 'French', value: 'fr' },
+          { title: 'Türkçe', value: 'tr' },
+          { title: 'Mandarin', value: 'zh' }
+        ]
+      },
+      validation: Rule => Rule.required()
+    }),
+    defineField({
       name: 'name',
       title: 'Name',
       type: 'string',
