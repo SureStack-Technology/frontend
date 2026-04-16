@@ -82,10 +82,10 @@ export default defineType({
       type: 'array',
       of: [
         {
-          title: 'Block',
+          title: 'Bio',
           type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
+          // styles: [{title: 'Normal', value: 'normal'}],
+          // lists: [],
         },
       ],
     }),

@@ -13,7 +13,9 @@ const PortableText = ({ blocks }) => {
   return blocks.map((block, i) => (
     <p key={i} className="text-white leading-relaxed">
       {block.children.map((child, j) => (
-        <span key={j}><Play size={12} className='inline'/> {child.text}</span>
+        <span key={j}>
+          {child.text}
+        </span>
       ))}
     </p>
   ));
@@ -49,9 +51,11 @@ const TeamMemberModal = ({ member, onClose }) => {
           </div>
 
           <div className="mb-6">
-            <h4 className="text-white font-semibold mb-3">Key Highlights</h4>
-            {member.bio && (<
-              PortableText blocks={member.bio} />
+            {member.bio && (
+              <div>
+                <h4 className="text-white font-semibold mb-3">Key Highlights</h4>
+                <PortableText blocks={member.bio} />
+              </div>
             )}
           </div>
 
