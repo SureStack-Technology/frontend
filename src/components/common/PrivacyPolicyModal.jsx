@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Check, Play, Linkedin } from 'lucide-react';
+import { X, Play } from 'lucide-react';
 import { client } from "../../sanity.js";
 
 

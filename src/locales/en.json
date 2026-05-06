@@ -75,6 +75,35 @@
     "failure": "Something went wrong. Please try again.",
     "sending": "Sending ..."
   },
+  "pricing": {
+    "heading": "Flexible Risk Monitoring",
+    "sub": "Choose the tier that fits your institutional or personal portfolio needs.",
+    "monthly": "Monthly",
+    "yearly": "Yearly (Save 10%)",
+    "cta": "Select Plan",
+    "tiers": {
+      "free": {
+        "name": "Free Trial",
+        "price": "free",
+        "features": ["Basic Analytics", "5 Crypto Assets", "Basic Risk Scores"]
+      },
+      "basic": {
+        "name": "Basic Individual",
+        "price": "$99",
+        "features": ["Advanced Analytics and Simulations", "20 Crypto Assets", "Basic Risk Scores"]
+      },
+      "pro": {
+        "name": "Pro (Institution)",
+        "price": "$200",
+        "features": ["Advanced Analytics and Simulations", "Full Market Coverage", "20 Accounts", "Priority Support"]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "features": ["Advanced Analytics and Simulations", "Full Market Coverage", "Unlimited Accounts", "24/7 SLA"]
+      }
+    }
+  },
   "footer": {
     "product": "Product",
     "company": "Company",

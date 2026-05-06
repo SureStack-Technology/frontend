@@ -18,7 +18,7 @@ const IconHolder = ({ iconData }) => {
     if (!iconData?.svg) return null;
 
     return (
-        <div className="bg-slate-800 rounded-lg w-20 h-20 flex items-center justify-center p-3 flex-shrink-0">
+        <div className="bg-slate-800 rounded-lg w-20 h-20 flex items-center justify-center p-3 shrink-0">
             <SVG src={iconData.svg}
                 className=" text-cyan-400"
                 style={{ height: '42px', width: '42px' }} 
@@ -62,7 +62,7 @@ const Features = () => {
 
     return (
         <section id="features" className="py-20">
-            <div className="glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[var(--glow-cyan)]">
+            <div className="glass-card max-w-7xl mx-auto p-4 sm:px-6 lg:px-8 border border-[--glow-cyan]">
                 <div className="text-center mb-16 ">
                     <h2 className="text-4xl font-heading text-white mb-4">
                         {t('features.heading')}

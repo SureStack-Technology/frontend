@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Github, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized contact form

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PrivacyPolicyModal from "../common/PrivacyPolicyModal";
 import TermsOfUseModal from "../common/TermsOfUseModal";
-import { Shield, Twitter, Github, Linkedin, Youtube } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized Footer Link Column

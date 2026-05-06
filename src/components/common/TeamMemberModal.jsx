@@ -1,7 +1,7 @@
 import React from 'react';
-import { X, Check, Play, Linkedin } from 'lucide-react';
+import { X, Check, Play } from 'lucide-react';
+import { FaLinkedin } from "react-icons/fa";
 import { client } from "../../sanity.js";
-// import imageUrlBuilder from '@sanity/image-url';
 import { createImageUrlBuilder } from '@sanity/image-url';
 
 const builder = createImageUrlBuilder(client);
@@ -61,7 +61,7 @@ const TeamMemberModal = ({ member, onClose }) => {
 
           {member.linkedIn && (
             <a href={member.linkedIn} target='_blank' className="inline-flex items-center text-cyan-400 hover:text-cyan-300">
-              <Linkedin className="w-5 h-5 mr-2" />
+              <FaLinkedin className="w-5 h-5 mr-2" />
               View LinkedIn Profile
             </a>
           )}

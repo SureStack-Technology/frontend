@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Github, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Shield, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import useLanguageStore from '../../stores/useLanguageStore';
 
 // Modularized contact information block
@@ -179,7 +180,7 @@ const Contact = () => {
                               link="mailto:hello@surestack.tech" 
                               linkText="hello@surestack.tech" />
 
-              <ContactInfoItem Icon={Github} 
+              <ContactInfoItem Icon={SiGithub} 
                               title="GitHub" 
                               link="https://github.com/surestack" 
                               linkText="github.com/surestack" />
