@@ -7,6 +7,7 @@
   },
   "nav": {
     "features": "Features",
+    "pricing": "Pricing",
     "values": "Values",
     "team": "Team",
     "blog": "Blog",
@@ -76,31 +77,63 @@
     "sending": "Sending ..."
   },
   "pricing": {
-    "heading": "Flexible Risk Monitoring",
-    "sub": "Choose the tier that fits your institutional or personal portfolio needs.",
+    "heading": "Surestack Protection Plans",
+    "sub": "Institutional-grade digital asset protection for every stage",
     "monthly": "Monthly",
     "yearly": "Yearly (Save 10%)",
-    "cta": "Select Plan",
     "tiers": {
       "free": {
-        "name": "Free Trial",
-        "price": "free",
-        "features": ["Basic Analytics", "5 Crypto Assets", "Basic Risk Scores"]
+        "name": "Free",
+        "sub": "Explore and learn",
+        "blurb": "Get essential insights and explore SureStack",
+        "price": "$0",
+        "eaLabel": "Early Access",
+        "eaText": "Lock in this price for as long as you're a member",
+        "includes": "Includes:",
+        "features": ["Risk scenario explorer", "Limited dashboard access", "Real-time market information", "News & alerts", "Community access","null","null"],
+        "cta":"Get Started Free"
       },
-      "basic": {
-        "name": "Basic Individual",
-        "price": "$99",
-        "features": ["Advanced Analytics and Simulations", "20 Crypto Assets", "Basic Risk Scores"]
+      "starter": {
+        "name": "Starter",
+        "sub": "For individuals & new investors",
+        "blurb": "Simple, essential protection for getting started",
+        "price": "$29",
+        "eaLabel": "First 100 members",
+        "eaText": "Lock in this price for as long as you're a member",
+        "includes": "Early Access Includes:",
+        "features": ["Up to $10,000 portfolio coverage (standard price:$5,000)", "Real-time wallet & exchange monitoring", "Smart contract risk analysis","Incident detection & alerts","Claims support & guidance","Email support"],
+        "cta":"Join Starter"
+      },
+      "growth": {
+        "name": "Growth",
+        "sub": "For active investors",
+        "price": "$149",
+        "eaLabel": "First 100 members",
+        "eaText": "Lock in this price for as long as you're a member",
+        "includes": "Early Access Includes:",
+        "features": ["Up to $50,000 portfolio coverage (standard price:$75,000)", "DeFi protocol risk scoring", "Exchange risk monitoring", "Phishing and scam protection","Priority claims processing","24/7 live chat support"],
+        "cta":"Choose Growth"
       },
       "pro": {
-        "name": "Pro (Institution)",
-        "price": "$200",
-        "features": ["Advanced Analytics and Simulations", "Full Market Coverage", "20 Accounts", "Priority Support"]
+        "name": "Pro",
+        "sub": "For advanced investors & professionals",
+        "price": "$349",
+        "eaLabel": "First 100 members",
+        "eaText": "Lock in this price for as long as you're a member",
+        "includes": "Early Access Includes:",
+        "features": ["Up to $100,000 portfolio coverage (standard price:$150,000)", "Advance threat intelligence", "On-chain forensics & analytics", "Custom risk alerts & reporting","Dedicated claims manager","Priority incident response"],
+        "cta":"Choose Pro"
       },
       "enterprise": {
         "name": "Enterprise",
+        "sub": "For institutions & businesses",
+        "blurb": "Tailored solutions for organisations with unique security needs",
         "price": "Custom",
-        "features": ["Advanced Analytics and Simulations", "Full Market Coverage", "Unlimited Accounts", "24/7 SLA"]
+        "eaLabel": "First 100 members",
+        "eaText": "Lock in this price for as long as you're a member",
+        "includes": "Includes everything in Pro plus:",
+        "features": ["Custom coverage limits", "Dedicated account manager", "SLA & uptime guarantees", "Advanced integrations (API Access)","Compliance and audit support","Priority onboarding & white glove service"],
+        "cta":"Contact Sales"
       }
     }
   },

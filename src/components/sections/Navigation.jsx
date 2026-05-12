@@ -19,6 +19,7 @@ const Navigation = () => {
     // Define navigation items. Use 'to' for internal Link routes, 'href' for external or section anchors.
     const navItems = [
         { type: 'anchor', href: "#features", label: t('nav.features'), protected: false  },
+        { type: 'anchor', href: "#pricing", label: t('nav.pricing'), protected: false  },
         { type: 'anchor', href: "#team", label: t('nav.team'), protected: false },
         { type: 'anchor', href: "#our_values", label: t('nav.values'), protected: false },
         { type: 'anchor', href: "#blog", label: t('nav.blog'), protected: false },
@@ -30,7 +31,6 @@ const Navigation = () => {
     ];
 
     const handleLogout = () => {
-
         logout();
     };
 
