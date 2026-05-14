@@ -3,7 +3,7 @@
     "home_title": "RISK Protocol | Real-Time Crypto Risk Assessment",
     "home_description": "The first DeFi platform integrating real-time market volatility into risk scoring. Update every 30 seconds.",
     "dashboard_title": "Risk Terminal | Live Monitoring",
-    "keywords": "crypto, risk, protocol, blockchain, real-time, volatility"
+    "keywords": "crypto, risk, protocol, blockchain, real-time, volatility, insurance, analysis"
   },
   "nav": {
     "features": "Features",
@@ -11,7 +11,7 @@
     "values": "Values",
     "team": "Team",
     "blog": "Blog",
-    "early_bird": "Early Bird",
+    "early_bird": "Early Adoption",
     "contact": "Contact",
     "dashboard": "Dashboard",
     "documents": "Documents",
@@ -90,7 +90,7 @@
         "eaLabel": "Early Access",
         "eaText": "Lock in this price for as long as you're a member",
         "includes": "Includes:",
-        "features": ["Risk scenario explorer", "Limited dashboard access", "Real-time market information", "News & alerts", "Community access","null","null"],
+        "features": ["Real-time market information", "News & alerts", "Community access","null","null","null"],
         "cta":"Get Started Free"
       },
       "starter": {
@@ -100,8 +100,8 @@
         "price": "$29",
         "eaLabel": "First 100 members",
         "eaText": "Lock in this price for as long as you're a member",
-        "includes": "Early Access Includes:",
-        "features": ["Up to $10,000 portfolio coverage (standard price:$5,000)", "Real-time wallet & exchange monitoring", "Smart contract risk analysis","Incident detection & alerts","Claims support & guidance","Email support"],
+        "includes": "Key Features:",
+        "features": ["Real-time wallet & exchange monitoring", "Smart contract risk analysis","Incident detection & alerts","Claims support & guidance","Email support","null"],
         "cta":"Join Starter"
       },
       "growth": {
@@ -110,8 +110,8 @@
         "price": "$149",
         "eaLabel": "First 100 members",
         "eaText": "Lock in this price for as long as you're a member",
-        "includes": "Early Access Includes:",
-        "features": ["Up to $50,000 portfolio coverage (standard price:$75,000)", "DeFi protocol risk scoring", "Exchange risk monitoring", "Phishing and scam protection","Priority claims processing","24/7 live chat support"],
+        "includes": "Everything in Starter, plus:",
+        "features": ["DeFi protocol risk scoring", "Exchange risk monitoring", "Phishing and scam protection","Priority claims processing","24/7 live chat support","null"],
         "cta":"Choose Growth"
       },
       "pro": {
@@ -120,8 +120,8 @@
         "price": "$349",
         "eaLabel": "First 100 members",
         "eaText": "Lock in this price for as long as you're a member",
-        "includes": "Early Access Includes:",
-        "features": ["Up to $100,000 portfolio coverage (standard price:$150,000)", "Advance threat intelligence", "On-chain forensics & analytics", "Custom risk alerts & reporting","Dedicated claims manager","Priority incident response"],
+        "includes": "Everything in Growth, plus:",
+        "features": ["Advance threat intelligence", "On-chain forensics & analytics", "Custom risk alerts & reporting","Dedicated claims manager","Priority incident response","null"],
         "cta":"Choose Pro"
       },
       "enterprise": {
@@ -131,8 +131,8 @@
         "price": "Custom",
         "eaLabel": "First 100 members",
         "eaText": "Lock in this price for as long as you're a member",
-        "includes": "Includes everything in Pro plus:",
-        "features": ["Custom coverage limits", "Dedicated account manager", "SLA & uptime guarantees", "Advanced integrations (API Access)","Compliance and audit support","Priority onboarding & white glove service"],
+        "includes": "Everything in Pro, plus:",
+        "features": ["Dedicated account team", "Service level commitments","Advanced integration(API)","Compliance and audit support","null","null"],
         "cta":"Contact Sales"
       }
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import useLanguageStore from "../../stores/useLanguageStore";
-import { Gift, Rocket, TrendingUp, ShieldCheck, Landmark, SquareCheckBig, Calendar, LockKeyhole, Star } from 'lucide-react';
+import { Gift, Rocket, TrendingUp, ShieldCheck, Landmark, SquareCheckBig, Calendar, LockKeyhole, Star, ArrowRight } from 'lucide-react';
 
 const Pricing = () => {
   const { t, language } = useLanguageStore();
@@ -13,6 +13,7 @@ const Pricing = () => {
       icon: <Gift size={32} color="#0961d1" />,
       colour: "#0961d1",
       sub: t("pricing.tiers.free.sub"),
+      blurb: t("pricing.tiers.free.blurb"),
       price: t("pricing.tiers.free.price"),
       name: t("pricing.tiers.free.name"),
       eaLabel: t("pricing.tiers.free.eaLabel"),
@@ -26,13 +27,13 @@ const Pricing = () => {
         t("pricing.tiers.free.features.5"),
       ],
       cta: t("pricing.tiers.free.cta"),
-      earlyAccess: false,
     },{
       id: "starter",
       buttonText:"EARLY ACCESS",
       icon: <Rocket size={32} color="#a669f4" />,
       colour: "#4724b2",
       sub: t("pricing.tiers.starter.sub"),
+      blurb: t("pricing.tiers.free.blurb"),
       price: "$29",
       eaPrice: "$27.5",
       name: t("pricing.tiers.starter.name"),
@@ -47,14 +48,14 @@ const Pricing = () => {
         t("pricing.tiers.starter.features.5"),
       ],
       cta: t("pricing.tiers.starter.cta"),
-      earlyAccess: true,
     },{
       id: "growth",
       buttonText:"EARLY ACCESS",
       icon: <TrendingUp size={32} color="#2e8738" />,
       colour: "#2e8738",
       sub: t("pricing.tiers.growth.sub"),
-      price: "$169",
+      blurb: t("pricing.tiers.free.blurb"),
+      price: "$149",
       eaPrice: "$149",
       name: t("pricing.tiers.growth.name"),
       eaLabel: t("pricing.tiers.growth.eaLabel"),
@@ -68,14 +69,15 @@ const Pricing = () => {
         t("pricing.tiers.growth.features.5"),
       ],
       cta: t("pricing.tiers.growth.cta"),
-      earlyAccess: true,
+      earlyAccess: false,
     },{
       id: "pro",
       buttonText:"EARLY ACCESS",
       icon: <ShieldCheck size={32} color="#064ea9" />,
       colour: "#064ea9",
       sub: t("pricing.tiers.pro.sub"),
-      price: "$499",
+      blurb: t("pricing.tiers.free.blurb"),
+      price: "$349",
       eaPrice: "$349",
       name: t("pricing.tiers.pro.name"),
       eaLabel: t("pricing.tiers.pro.eaLabel"),
@@ -89,13 +91,13 @@ const Pricing = () => {
         t("pricing.tiers.pro.features.5"),
       ],
       cta: t("pricing.tiers.pro.cta"),
-      earlyAccess: true,
     },{
       id: "enterprise",
       buttonText:"Custom Solution",
       icon: <Landmark size={32} color="#d37300" />,
       colour: "#d37300",
       sub: t("pricing.tiers.enterprise.sub"),
+      blurb: t("pricing.tiers.free.blurb"),
       price: "Custom",
       eaPrice: "Custom",
       name: t("pricing.tiers.enterprise.name"),
@@ -110,14 +112,23 @@ const Pricing = () => {
         t("pricing.tiers.enterprise.features.5"),
       ],
       cta: t("pricing.tiers.enterprise.cta"),
-      earlyAccess: false,
     },
   ];
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+  }
+
+  const comingSoon = async(e) => {
+    e.preventDefault();
+    alert("Coming Soon");
+  }
 
   return (
     <section id="pricing" className="py-20 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-heading text-white mb-4">
             {t("pricing.heading")}
           </h2>
@@ -132,43 +143,44 @@ const Pricing = () => {
 
             return(
               <div key={tier.id}
-                  className="p-2 h-full mt-auto rounded-2xl border transition-all duration-300 transform hover:-translate-y-2"
-                  style={{borderColor: tier.colour}}>
+                  className="p-2 h-full mt-auto rounded-2xl border transition-all duration-300 transform hover:brightness-150 hover:shadow-[0_0_10px_var(--shadow-color)]"
+                  style={{borderColor: tier.colour, '--shadow-color': tier.colour }}>
 
-                <span className="text-sm mb-2 uppercase border rounded-full px-3" 
-                      style={{borderColor: tier.colour, color: `color-mix(in srgb, ${tier.colour}, white 30%)`}}>
-                  {tier.buttonText}
-                </span>
-
-                <div className="flex flex-col items-center justify-center w-full" 
+                <div className="flex flex-row items-stretch justify-around w-full gap-2 h-20" 
                      style={{color: `color-mix(in srgb, ${tier.colour}, white 95%)`}}>
-                  <div>{tier.icon}</div>
-                  <div className="font-bold text-xl">{tier.name}</div>
-                  <div className="text-white text-sm">{tier.sub}</div>
-                </div>
 
-                {tier.earlyAccess ? ( 
-                  <div className="flex flex-col items-center justify-center mb-6 border rounded my-2" 
-                     style={{borderColor: tier.colour}}>
-                     <div className="text-xs">{tier.eaLabel}</div>
-                     <div className="text-2xl font-bold" style={{color: `color-mix(in srgb, ${tier.colour}, white 30%)`}}>{tier.eaPrice}</div>
-                  </div>
-                ) : (
-                  <div className="h-20">&nbsp;</div>
-                )
-                }
-
-                <div className="flex items-center justify-center mb-6 border rounded" 
-                     style={{borderColor: tier.colour}}>
-                  <div></div>
-                  <span className="text-2xl font-bold" style={{color: `color-mix(in srgb, ${tier.colour}, white 30%)`}}>
-                    {tier.price}
+                  <span className="inline-flex items-center justify-center w-12 h-12 border rounded-full p-2" 
+                        style={{borderColor: tier.colour}}>
+                    {tier.icon}
                   </span>
-                  <span className="text-[10px] ml-2">/month</span>
+                  <div className="flex flex-col">
+                    <div className="font-bold text-xl" style={{color: tier.colour}}>{tier.name}</div>
+                    <div className="text-white text-sm font-light">{tier.sub}</div>
+                  </div>
                 </div>
 
-                <div className="border rounded p-2" style={{borderColor: tier.colour}}>
-                  <div className="text-base">{tier.includes}</div>
+                <hr className="w-full h-2" style={{borderColor: tier.colour}}/>
+
+                <div className="flex flex-col my-2.5">
+                  <div className="text-xs">Starting at</div>
+                  <div className="flex flex-row flex-1 items-baseline">
+                    <span className="text-2xl font-bold" style={{color: `color-mix(in srgb, ${tier.colour}, white 30%)`}}>
+                      {tier.price}
+                    </span>
+                    <span className="text-xs ml-2">/month</span>
+                  </div>
+                  <div className="text-xs">{tier.blurb}</div>
+                </div>
+
+                <hr className="w-full h-2" style={{borderColor: tier.colour}}/>
+
+                <div className="flex flex-col justify-around h-60">
+
+                  <div className="text-sm font-semibold py-1" 
+                        style={{color: `color-mix(in srgb, ${tier.colour}, white 30%)`}}>
+                      {tier.includes}
+                  </div>
+
                   <ul className="space-y-4 mb-2 text-[11px]">
                     {tier.features.map((feature, i) => (
                       feature!=="null" ? (
@@ -177,15 +189,16 @@ const Pricing = () => {
                           <span>{feature}</span>
                         </li>
                       ) : (
-                        <li key={i} className="h-15">&nbsp;</li>
+                        <li key={i} className="">&nbsp;</li>
                       )
                     ))}
                   </ul>
 
-                  <button className="w-[97%] mx-auto py-2 rounded-lg font-bold transition" style={{backgroundColor: tier.colour}}>
+                  <button className="w-[97%] mx-auto py-2 rounded-lg font-bold transition" 
+                          style={{backgroundColor: tier.colour}}
+                          onClick={comingSoon}>
                     {tier.cta}
                   </button>
-
                 </div>
               </div>
             );
@@ -194,69 +207,65 @@ const Pricing = () => {
 
         <div className="flex items-stretch border rounded border-blue-500 my-2 p-2 gap-4">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="shrink-0 m-2" style={{color:'#4c56d2'}} size={42} absoluteStrokeWidth/>
-            <span className="text-base leading-tight">Early Access Coverage Commitment</span>
+            <ShieldCheck className="shrink-0 m-2 text-blue-600" size={48} absoluteStrokeWidth/>
+            <span className="text-base leading-tight">Digital Risk Support, Not Insurance</span>
           </div>
           <div className="w-px bg-linear-to-b from-transparent via-blue-600 to-transparent" />
-          <div className="text-[11px] items-center w-[50%]">
-            When the full protection system goes live, you will receive coverage for the same number of months you have prepaid, according to your selected plan and early accesss pricing status. <br/>Example: Prepay 6 months today = 6 months coverage once the system is live
+          <div className="text-[11px] items-center w-[45%]">
+            SureStack provides technology and services that help you identify, monitor, and respond to digital risks. We do not sell insurance, and nothing in our offering should be construed as insurance or a guarantee of any specific outcome.
           </div>
           <div className="w-px bg-linear-to-b from-transparent via-blue-600 to-transparent" />
           <div className="flex items-center gap-2">
-            <ShieldCheck className="flex text-blue-700 shrink-0" size={48} absoluteStrokeWidth/>
-            <span className="text-sm">Our commitment: Fair, Transparent, Protected</span>
+            <span className="text-sm">Learn more about what we do</span>
+            <ArrowRight className="flex text-blue-700 shrink-0" size={48} absoluteStrokeWidth/>
           </div>
         </div>
 
-        <div className="flex items-stretch border rounded border-blue-500 my-2 p-2 gap-4">
-          <div className="flex border-r border-blue">
-            <Calendar className="text-blue-600" size={42} absoluteStrokeWidth/>
-          </div>
-          <div className="w-px bg-linear-to-b from-transparent via-blue-600 to-transparent" />
-          <div className="flex flex-col w-full">
-            <div className="text-sm font-bold text-blue-600">
-              How Early Acess Works
+        <div className="flex items-stretch border rounded border-blue-500 p-2 gap-4">
+          <div className="flex flex-row items-center justify-between">
+            <div className="flex">
+              <div className="inline-flex items-center justify-center min-w-12 min-h-12 border border-blue-600 rounded-full m-2">
+                <LockKeyhole className="text-blue-600"/>
+              </div>
+              <div className="flex flex-col text-sm">
+                <div className="font-bold mb-1">You're in control</div>
+                <div className="text-[10px]">You make the decisions, we provide the insight</div>
+              </div>
             </div>
-            <div className="flex flex-row items-center justify-between">
-              <div className="flex">
-                <span className="inline-flex items-center justify-center w-10 h-10 border border-blue-600 rounded-full m-2">
-                  <ShieldCheck className="text-blue-600"/>
-                </span>
-                <span className="text-sm">
-                  <span className="font-bold">1. Lock in early pricing</span><br/> 
-                  <span className="text-[10px]">Be one of the first 100 member in any paid plan</span>
-                </span>
+            <div className="flex">
+              <div className="inline-flex items-center justify-center min-w-12 min-h-12 border border-blue-600 rounded-full m-2">
+                <ShieldCheck className="text-blue-600"/>
               </div>
-              <div className="flex">
-                <span className="inline-flex items-center justify-center w-10 h-10 border border-blue-600 rounded-full m-2">
-                  <LockKeyhole className="text-blue-600"/>
-                </span>
-                <span className="text-sm">
-                  <span className="font-bold">2. Keep ypur price</span><br/>
-                  <span className="text-[10px]">Your early access price stays as long as you remain a member</span>
-                </span>
+              <div className="flex flex-col text-sm">
+                <div className="font-bold mb-1">Privacy First</div>
+                <div className="text-[10px]">Your data is protected by industry-leading practices</div>
               </div>
-              <div className="flex">
-                <span className="inline-flex items-center justify-center w-10 h-10 border border-blue-600 rounded-full m-2">
-                  <Star className="text-blue-600"/>
-                </span>
-                <span className="text-sm">
-                  <span className="font-bold">3. Better benefits</span><br/>
-                  <span className="text-[10px]">Early members get more coverage for the same price</span>
-                </span>
+            </div>
+            <div className="flex">
+              <div className="inline-flex items-center justify-center min-w-12 min-h-12 border border-blue-600 rounded-full m-2">
+                <Star className="text-blue-600"/>
               </div>
-              <div className="flex">
-                <span className="inline-flex items-center justify-center w-10 h-10 border border-blue-600 rounded-full m-2">
-                  <Calendar className="text-blue-600"/>
-                </span>
-                <span className="text-sm">
-                  <span className="font-bold">4. One Year reservation</span><br/>
-                  <span className="text-[10px]">Prepay for any number of months (1-12) and the price is locked for that period</span>
-                </span>
+              <div className="flex flex-col text-sm">
+                <div className="font-bold mb-1">Fast and reliable</div>
+                <div className="text-[10px]">Real-time monitoring and rapid support when it matters</div>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="inline-flex items-center justify-center min-w-12 min-h-12 border border-blue-600 rounded-full m-2">
+                <Calendar className="text-blue-600"/>
+              </div>
+              <div className="flex flex-col text-sm">
+                <div className="font-bold mb-1">Trusted by Many</div>
+                <div className="text-[10px]">Built for investors, by experts in digital risk management</div>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="text-center text-sm">
+          SureStack does not provide financial, legal, or investment advice. Information provided is for general puposes only.
+        </div>
+
       </div>
     </section>
   );

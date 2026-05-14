@@ -49,3 +49,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 >>>>>>> fd7a77db3f61708eb654b9221042f25c8123b270
+dist/index.html
+dist/index.html
