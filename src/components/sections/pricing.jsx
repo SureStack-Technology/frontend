@@ -2,9 +2,12 @@ import React from "react";
 import { Check } from "lucide-react";
 import useLanguageStore from "../../stores/useLanguageStore";
 import { Gift, Rocket, TrendingUp, ShieldCheck, Landmark, SquareCheckBig, Calendar, LockKeyhole, Star, ArrowRight } from 'lucide-react';
+import { SignUp, useUser } from "@clerk/clerk-react";
 
 const Pricing = () => {
   const { t, language } = useLanguageStore();
+  const { isSignedIn } = useUser();
+  const [showSignUp, setShowSignUp] = useState(false);
 
   const tiers = [
     {
@@ -124,8 +127,34 @@ const Pricing = () => {
     alert("Coming Soon");
   }
 
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    if (isSignedIn) {
+      // Redirect to dashboard if already logged in
+      window.location.href = "/dashboard";
+    } else {
+      setShowSignUp(true);
+    }
+  };
+
   return (
-    <section id="pricing" className="py-20 bg-slate-900/50">
+    <section id="pricing" className="relative py-20 bg-slate-900/50">
+      
+      {/* CLERK MODAL OVERLAY */}
+      {showSignUp && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="relative">
+            <button 
+              onClick={() => setShowSignUp(false)}
+              className="absolute -top-10 right-0 text-white hover:text-slate-300 transition"
+            >
+              <X size={24} />
+            </button>
+            <SignUp routing="hash" signInUrl="/sign-in" />
+          </div>
+        </div>
+      )}
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-8">
@@ -263,7 +292,8 @@ const Pricing = () => {
         </div>
 
         <div className="text-center text-sm">
-          SureStack does not provide financial, legal, or investment advice. Information provided is for general puposes only.
+          {t("pricing.warning")}
+          {/* SureStack does not provide financial, legal, or investment advice. Information provided is for general puposes only */}
         </div>
 
       </div>

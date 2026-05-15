@@ -7,6 +7,7 @@
   },
   "nav": {
     "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
     "values": "Değerler",
     "team": "Takım",
     "blog": "Blog",
@@ -74,6 +75,68 @@
     "success": "Başarılı! Yakında sizinle iletişime geçeceğiz.",
     "failure": "Bir sorun oluştu. Lütfen tekrar deneyin.",
     "sending": "Gönderiliyor..."
+  },
+  "pricing": {
+    "heading": "Surestack Koruma Planları",
+    "sub": "Her aşama için kurumsal düzeyde dijital varlık koruması",
+    "monthly": "Aylık",
+    "yearly": "Yıllık (%10 Tasarruf Et)",
+    "warning": "SureStack finansal, yasal veya yatırım tavsiyesi vermez. Sağlanan bilgiler yalnızca genel amaçlıdır",
+    "tiers": {
+      "free": {
+        "name": "Ücretsiz",
+        "sub": "Keşfet ve öğren",
+        "blurb": "Temel bilgileri edinin ve SureStack'i keşfedin",
+        "price": "$0",
+        "eaLabel": "Erken Erişim",
+        "eaText": "Üye olduğunuz sürece bu fiyatı sabitleyin",
+        "includes": "Şunları içerir:",
+        "features": ["Gerçek zamanlı piyasa bilgileri", "Haberler ve uyarılar", "Topluluk erişimi", "null", "null", "null"],
+        "cta": "Ücretsiz Başlayın"
+      },
+      "starter": {
+        "name": "Başlangıç",
+        "sub": "Bireyler ve yeni yatırımcılar için",
+        "blurb": "Başlamak için basit ve temel koruma",
+        "price": "$29",
+        "eaLabel": "İlk 100 üye",
+        "eaText": "Üye olduğunuz sürece bu fiyatı sabitleyin",
+        "includes": "Temel Özellikler:",
+        "features": ["Gerçek zamanlı cüzdan ve borsa izleme", "Akıllı sözleşme risk analizi", "Olay tespiti ve uyarılar", "Talep desteği ve rehberlik", "E-posta desteği", "null"],
+        "cta": "Başlangıç'a Katıl"
+      },
+      "growth": {
+        "name": "Gelişim",
+        "sub": "Aktif yatırımcılar için",
+        "price": "$149",
+        "eaLabel": "İlk 100 üye",
+        "eaText": "Üye olduğunuz sürece bu fiyatı sabitleyin",
+        "includes": "Başlangıç'taki her şey, artı:",
+        "features": ["DeFi protokolü risk puanlaması", "Borsa risk izleme", "Kimlik avı ve dolandırıcılık koruması", "Öncelikli talep işleme", "7/24 canlı sohbet desteği", "null"],
+        "cta": "Gelişim'i Seç"
+      },
+      "pro": {
+        "name": "Pro",
+        "sub": "İleri düzey yatırımcılar ve profesyoneller için",
+        "price": "$349",
+        "eaLabel": "İlk 100 üye",
+        "eaText": "Üye olduğunuz sürece bu fiyatı sabitleyin",
+        "includes": "Gelişim'deki her şey, artı:",
+        "features": ["Gelişmiş tehdit istihbaratı", "Zincir içi adli tıp ve analitik", "Özel risk uyarıları ve raporlama", "Özel talep yöneticisi", "Öncelikli olay müdahalesi", "null"],
+        "cta": "Pro'yu Seç"
+      },
+      "enterprise": {
+        "name": "Kurumsal",
+        "sub": "Kurumlar ve işletmeler için",
+        "blurb": "Benzersiz güvenlik ihtiyaçları olan kuruluşlar için özel çözümler",
+        "price": "Özel",
+        "eaLabel": "İlk 100 üye",
+        "eaText": "Üye olduğunuz sürece bu fiyatı sabitleyin",
+        "includes": "Pro'daki her şey, artı:",
+        "features": ["Özel hesap ekibi", "Hizmet seviyesi taahhütleri", "Gelişmiş entegrasyon (API)", "Uyumluluk ve denetim desteği", "null", "null"],
+        "cta": "Satışla İletişime Geçin"
+      }
+    }
   },
   "footer": {
     "product": "Ürün",

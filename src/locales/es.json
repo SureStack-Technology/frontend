@@ -7,6 +7,7 @@
   },
   "nav": {
     "features": "Funcionalidades",
+    "pricing": "Precios",
     "values": "Valores",
     "team": "Equipo",
     "blog": "Blog",
@@ -70,6 +71,68 @@
     "success": "¡Lo lograste! Nos pondremos en contacto contigo pronto.",
     "failure": "Algo salió mal. Inténtalo de nuevo.",
     "sending": "Enviando..."
+  },
+  "pricing": {
+    "heading": "Planes de Protección Surestack",
+    "sub": "Protección de activos digitales de grado institucional para cada etapa",
+    "monthly": "Mensual",
+    "yearly": "Anual (Ahorra 10%)",
+    "warning": "SureStack no proporciona asesoramiento financiero, legal o de inversión. La información proporcionada es solo para fines generales",
+    "tiers": {
+      "free": {
+        "name": "Gratis",
+        "sub": "Explora y aprende",
+        "blurb": "Obtén información esencial y explora SureStack",
+        "price": "$0",
+        "eaLabel": "Acceso Anticipado",
+        "eaText": "Mantén este precio mientras seas miembro",
+        "includes": "Incluye:",
+        "features": ["Información del mercado en tiempo real", "Noticias y alertas", "Acceso a la comunidad", "null", "null", "null"],
+        "cta": "Comenzar Gratis"
+      },
+      "starter": {
+        "name": "Starter",
+        "sub": "Para individuos y nuevos inversores",
+        "blurb": "Protección simple y esencial para empezar",
+        "price": "$29",
+        "eaLabel": "Primeros 100 miembros",
+        "eaText": "Mantén este precio mientras seas miembro",
+        "includes": "Características principales:",
+        "features": ["Monitoreo de billeteras y exchanges en tiempo real", "Análisis de riesgo de contratos inteligentes", "Detección de incidentes y alertas", "Soporte y guía en reclamaciones", "Soporte por correo electrónico", "null"],
+        "cta": "Unirse a Starter"
+      },
+      "growth": {
+        "name": "Growth",
+        "sub": "Para inversores activos",
+        "price": "$149",
+        "eaLabel": "Primeros 100 miembros",
+        "eaText": "Mantén este precio mientras seas miembro",
+        "includes": "Todo lo de Starter, más:",
+        "features": ["Puntuación de riesgo de protocolos DeFi", "Monitoreo de riesgo de exchanges", "Protección contra phishing y estafas", "Procesamiento prioritario de reclamaciones", "Chat en vivo 24/7", "null"],
+        "cta": "Elegir Growth"
+      },
+      "pro": {
+        "name": "Pro",
+        "sub": "Para inversores avanzados y profesionales",
+        "price": "$349",
+        "eaLabel": "Primeros 100 miembros",
+        "eaText": "Mantén este precio mientras seas miembro",
+        "includes": "Todo lo de Growth, más:",
+        "features": ["Inteligencia de amenazas avanzada", "Análisis y forense on-chain", "Alertas de riesgo y reportes personalizados", "Gestor de reclamaciones dedicado", "Respuesta prioritaria ante incidentes", "null"],
+        "cta": "Elegir Pro"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "sub": "Para instituciones y empresas",
+        "blurb": "Soluciones a medida para organizaciones con necesidades de seguridad únicas",
+        "price": "Personalizado",
+        "eaLabel": "Primeros 100 miembros",
+        "eaText": "Mantén este precio mientras seas miembro",
+        "includes": "Todo lo de Pro, más:",
+        "features": ["Equipo de cuenta dedicado", "Compromisos de nivel de servicio", "Integración avanzada (API)", "Soporte de cumplimiento y auditoría", "null", "null"],
+        "cta": "Contactar a Ventas"
+      }
+    }
   },
   "footer": {
     "product": "Producto",

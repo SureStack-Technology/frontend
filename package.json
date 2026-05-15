@@ -12,6 +12,7 @@
     "analyze": "npx vite-bundle-visualizer"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.61.6",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/orbitron": "^5.2.8",
     "@fontsource/rajdhani": "^5.2.7",

@@ -81,6 +81,7 @@
     "sub": "Institutional-grade digital asset protection for every stage",
     "monthly": "Monthly",
     "yearly": "Yearly (Save 10%)",
+    "warning": "SureStack does not provide financial, legal, or investment advice. Information provided is for general puposes only",
     "tiers": {
       "free": {
         "name": "Free",
