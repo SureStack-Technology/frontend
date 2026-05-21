@@ -139,8 +139,10 @@
     }
   },
   "footer": {
+    "heading": "SureStack Risk Protocol",
     "product": "المنتج",
     "company": "الشركة",
+    "address": "2810 N Church St #702186 Wilmington DE 19802-4447",
     "connect": "تواصل معنا",
     "sub": "أول منصة لتقييم مخاطر الكريبتو مع دمج تقلبات السوق في الوقت الفعلي.",
     "terms": "شروط الاستخدام",

@@ -139,8 +139,10 @@
     }
   },
   "footer": {
+    "heading": "SureStack Risk Protocol",
     "product": "产品中心",
     "company": "关于公司",
+    "address": "2810 N Church St #702186 Wilmington DE 19802-4447",
     "connect": "社交媒体",
     "sub": "首个整合实时波动率数据的加密风险评估平台。",
     "terms": "使用条款",

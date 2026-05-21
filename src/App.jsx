@@ -45,7 +45,7 @@ const LandingPage = () => (
       <SEO titleKey="seo.home_title" descriptionKey="seo.home_description" />
       <Hero />
       <Features />
-      <Pricing/>
+      {/* <Pricing/> */}
       <Team />
       <Values />
       <Blog />

@@ -135,8 +135,10 @@
     }
   },
   "footer": {
+    "heading": "SureStack Risk Protocol",
     "product": "Producto",
     "company": "Empresa",
+    "address": "2810 N Church St #702186 Wilmington DE 19802-4447",
     "connect": "Conectar",
     "sub": "La primera plataforma de evaluación de riesgos de criptomonedas con integración de volatilidad en tiempo real.",
     "terms": "Condiciones de uso",

@@ -139,8 +139,10 @@
     }
   },
   "footer": {
+    "heading": "SureStack Risk Protocol",
     "product": "Ürün",
     "company": "Şirket",
+    "address": "2810 N Church St #702186 Wilmington DE 19802-4447",
     "connect": "Bağlan",
     "sub": "Gerçek zamanlı volatilite entegrasyonuna sahip ilk kripto risk değerlendirme platformu.",
     "terms": "Kullanım Şartları",

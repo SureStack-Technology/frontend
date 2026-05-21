@@ -293,7 +293,6 @@ const Pricing = () => {
 
         <div className="text-center text-sm">
           {t("pricing.warning")}
-          {/* SureStack does not provide financial, legal, or investment advice. Information provided is for general puposes only */}
         </div>
 
       </div>
