@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { Menu, X, Shield, LogIn, LogOut } from 'lucide-react';
+import { Menu, X, Shield, LogIn, LogOut, AppWindow } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import LoginModal from '../auth/LoginModal';
 import useAuthStore from "../../stores/useAuthStore";
 import useLanguageStore from '../../stores/useLanguageStore';
 import LanguageSwitcher from '../common/LanguageSwitcher';
+import ThemeSwitcher from "../common/ThemeSwitcher";
 
 const Navigation = () => {
 
@@ -19,7 +20,7 @@ const Navigation = () => {
     // Define navigation items. Use 'to' for internal Link routes, 'href' for external or section anchors.
     const navItems = [
         { type: 'anchor', href: "#features", label: t('nav.features'), protected: false  },
-        { type: 'anchor', href: "#pricing", label: t('nav.pricing'), protected: false  },
+        // { type: 'anchor', href: "#pricing", label: t('nav.pricing'), protected: false  },
         { type: 'anchor', href: "#team", label: t('nav.team'), protected: false },
         { type: 'anchor', href: "#our_values", label: t('nav.values'), protected: false },
         { type: 'anchor', href: "#blog", label: t('nav.blog'), protected: false },
@@ -37,8 +38,8 @@ const Navigation = () => {
 
     const NavLinkItem = ({ item, isMobile = false }) => {
 
-        const commonClasses = isMobile 
-            ? "block px-3 py-2 text-slate-300 hover:text-cyan-400"
+        const commonClasses = isMobile
+            ? "block px-3 py-2 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400"
             : "sidebar-link rounded-md transition-all duration-200 font-subheading";
 
         const clickHandler = () => {
@@ -63,7 +64,7 @@ const Navigation = () => {
         if (item.type === 'route') {
             return (
                 <Link to={item.to} onClick={clickHandler} 
-                                className={`navigation-link flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 font-subheading font-semibold ${pathname === item.to ? 'active bg-safe/20 text-safe border border-safe/50 shadow-neon-safe' : 'text-slate-300 hover:bg-safe/10 hover:text-safe border border-transparent'}`}>
+                                className={`navigation-link flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 font-subheading font-semibold ${pathname === item.to ? 'active bg-safe/20 text-cyan-700 dark:text-safe border border-safe/50 shadow-neon-safe' : 'text-slate-700 dark:text-slate-300 hover:bg-safe/10 hover:text-cyan-600 dark:hover:text-safe border border-transparent'}`}>
                     {item.label}
                 </Link>
             );
@@ -73,8 +74,9 @@ const Navigation = () => {
         if (item.type === 'anchor') {
 
             return (
-                <a href={item.href} onClick={clickHandler} 
-                                className={`navigation-link flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 font-subheading font-semibold ${pathname.hash === item.href ? 'active bg-safe/20 text-safe border border-safe/50 shadow-neon-safe' : 'text-slate-300 hover:bg-safe/10 hover:text-safe border border-transparent'}`}>
+                <a href={item.href} 
+                    onClick={clickHandler} 
+                    className={`navigation-link flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 font-subheading font-semibold ${pathname.hash === item.href ? 'active bg-safe/20 text-cyan-700 dark:text-safe border border-safe/50 shadow-neon-safe' : 'text-slate-700 dark:text-slate-300 hover:bg-safe/10 hover:text-cyan-600 dark:hover:text-safe border border-transparent'}`}>
                     {item.label}
                 </a>
             );
@@ -85,14 +87,14 @@ const Navigation = () => {
 
     return (
         <>
-        <nav className="fixed w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800">
+        <nav className="fixed w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm z-50 border-b border-slate-200 dark:border-slate-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
                         <Shield className="h-8 w-8 text-neon-cyan" />
                         {/* Logo always links to the home route "/" */}
-                        <Link to="/" className="ml-2 text-lg font-heading">SURESTACK RISK PROTOCOL</Link>
+                        <Link to="/" className="ml-2 text-lg font-heading text-blue-800 dark:text-white">SURESTACK RISK PROTOCOL</Link>
                     </div>
                     
                     {/* Desktop Navigation Links and Auth Buttons */}
@@ -104,7 +106,7 @@ const Navigation = () => {
                         <LanguageSwitcher />
 
                         {/* Conditional Login/Logout Button */}
-                        {isLoggedIn ? (
+                        {/* {isLoggedIn ? (
                             <button onClick={handleLogout} 
                                     className="flex items-center text-red-400 hover:text-red-300 font-semibold font-subheading transition">
                                 <LogOut className="w-5 h-5 mr-1" /> Logout
@@ -114,11 +116,18 @@ const Navigation = () => {
                                     className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-subheading font-semibold transition flex items-center">
                                 <LogIn className="w-5 h-5 mr-2" /> Login
                             </button>
-                        )}
+                        )} */}
+
+                        <a href="https://demo.surestack.tech"
+                            className={"bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-subheading font-semibold transition flex items-center"}>
+                            <AppWindow className="w-5 h-5 mr-2" /> Demo
+                        </a>
+
+                        <ThemeSwitcher />
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-slate-800 dark:text-white">
                         {isMenuOpen ? <X /> : <Menu />}
                     </button>
                 </div>
@@ -126,7 +135,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Content */}
             {isMenuOpen && (
-            <div className="md:hidden bg-slate-800 border-t border-slate-700">
+            <div className="md:hidden bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
                 <div className="px-2 pt-2 pb-3 space-y-1">
 
                 {navItems.map((item, index) => <NavLinkItem key={index} item={item} isMobile={true} />)}

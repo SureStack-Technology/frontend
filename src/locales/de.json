@@ -27,6 +27,10 @@
     "accuracy": "Genauigkeitsrate der Ansprüche",
     "realtime": "Echtzeit-Überwachung"
   },
+  "techstack": {
+    "heading": "Angetrieben von einem modernen Stack",
+    "sub": "Die bewährten Technologien hinter der SureStack-Plattform."
+  },
   "features": {
     "heading": "Warum RISK Protocol?",
     "sub": "Die einzige Plattform, die Echtzeit-Volatilitätsanalysen mit dezentraler Risikobewertung kombiniert."

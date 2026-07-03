@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import useLanguageStore from "./stores/useLanguageStore";
+import useThemeStore from "./stores/useThemeStore";
 import ParticleBackground from "./components/common/ParticleBackground";
 import Navigation from "./components/sections/Navigation";
 import SEO from './components/common/SEO';
@@ -13,6 +14,7 @@ import Team from "./components/sections/Team";
 import Blog from "./components/sections/Blog";
 import EarlyBird from "./components/sections/EarlyBird";
 import Contact from "./components/sections/Contact";
+import TechStack from "./components/sections/TechStack";
 import Footer from "./components/sections/Footer";
 import Dashboard from './components/sections/Dashboard';
 import Documents from './components/sections/Documents';
@@ -51,12 +53,13 @@ const LandingPage = () => (
       <Blog />
       <EarlyBird />
       <Contact />
+      <TechStack />
     </main>
 );
 
 const AppContent = () => {
     return (
-        <div className="relative z-10 min-h-screen">
+        <div className="relative z-10 min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 transition-colors duration-300">
 
             <Navigation /> 
             
@@ -78,18 +81,20 @@ const AppContent = () => {
 }
 
 const App = () => {
-    // const [init, setInit] = useState(false);
+    
     const initLanguage = useLanguageStore((state) => state.init);
-
+    const initTheme = useThemeStore((state) => state.initTheme);
+    const theme = useThemeStore((state) => state.theme);
 
     useEffect(() => {
         initLanguage();
+        initTheme();
     }, [initLanguage]);
 
     return (
         <HelmetProvider>
             <Router>
-                <ParticleBackground />
+                <ParticleBackground theme={theme}/>
                 <AppContent />
             </Router>
         </HelmetProvider>

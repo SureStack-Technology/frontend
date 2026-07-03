@@ -2,7 +2,13 @@ import React, { useMemo, useState, useEffect } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticleBackground = () => {
+const ParticleBackground = ({theme}) => {
+
+    // Define dynamic colors based on the theme prop
+    const particleColor = theme === 'dark' ? '#06b6d4' : '#000000';
+    const lineColor = theme === 'dark' ? '#374151' : '#000000';
+    const opacity = theme === 'dark' ? 0.3 : 0.15;
+
     const [init, setInit] = useState(false);
 
     useEffect(() => {
@@ -14,7 +20,8 @@ const ParticleBackground = () => {
     }, []);
 
     const particlesOptions = useMemo(() => ({
-        background: { color: { value: "#0f172a" } },
+
+        background: { color: { value: "transparent" } },
         fpsLimit: 120,
         interactivity: {
             events: {
@@ -27,12 +34,12 @@ const ParticleBackground = () => {
             },
         },
         particles: {
-            color: { value: "#06b6d4" },
+            color: { value: particleColor },
             links: {
-                color: "#374151",
+                color: lineColor,
                 distance: 150,
                 enable: true,
-                opacity: 0.5,
+                opacity: opacity,
                 width: 1,
             },
             move: {
@@ -40,20 +47,21 @@ const ParticleBackground = () => {
                 speed: 1,
                 outModes: { default: "bounce" },
             },
-            number: { density: { enable: true, area: 800 }, value: 80 },
-            opacity: { value: 0.5 },
+            number: { 
+                density: { enable: true, area: 800 }, 
+                value: theme === 'dark' ? 80 : 50 
+            },
+            opacity: { value: opacity },
             size: { value: { min: 1, max: 5 } },
         },
-    }), []);
+    }), [theme, particleColor, lineColor, opacity]);
 
-    if (!init) return <div className="bg-slate-900 min-h-screen text-white flex items-center justify-center">Loading Particles...</div>;
+    if (!init) return <div className="min-h-screen text-slate-800 dark:text-white flex items-center justify-center">Loading Particles...</div>;
 
     return (
-        <Particles
-            id="tsparticles"
+        <Particles id="tsparticles"
             options={particlesOptions}
-            className="fixed inset-0 w-full h-full z-0"
-        />
+            className="fixed inset-0 w-full h-full z-0"/>
     );
 };
 

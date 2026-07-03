@@ -21,6 +21,7 @@
 
 
 :root {
+  --canvas-color: #ffffff;
   --primary-cyan: #00fff0;
   --primary-blue: #0657b4;
   --primary-magenta: #ff4bd8;
@@ -35,6 +36,7 @@
   --surface-magenta-soft: rgba(255, 0, 224, 0.16);
 
   --bg-root: var(--void-bg);
+  --bg-light: #ffffff;
   --bg-panel: rgba(14, 25, 46, 0.6);
   --fg-text: #E6F3FF;
   --accent-cyan: var(--primary-cyan);
@@ -42,26 +44,36 @@
   --accent-blue: var(--primary-blue);
   --glass-border: var(--glow-cyan);
   --glass-shadow: 0 0 12px var(--glow-blue);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
+html {
+  background: var(--bg-light) !important;
+  color: #1e293b !important; /* slate-800 — readable body text in light mode */
+}
+html.dark {
+  color-scheme: dark;
+}
 html,
 body {
   min-height: 100%;
-  background: var(--bg-root) !important;
-  color: var(--fg-text) !important;
+  /* background: var(--bg-light) !important; */
+  /* color: var(--fg-text) !important; */
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
 }
-
+html.dark {
+  --canvas-color: #030712;
+  background: var(--bg-root) !important;
+}
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background:
+  /* background:
     radial-gradient(circle at 18% 16%, var(--glow-magenta), transparent 55%),
     radial-gradient(circle at 78% 22%, var(--glow-cyan), transparent 55%),
-    linear-gradient(180deg, rgba(6, 17, 34, 0.94), rgba(10, 12, 17, 0.98));
+    linear-gradient(180deg, rgba(6, 17, 34, 0.94), rgba(10, 12, 17, 0.98)); */
   pointer-events: none;
   z-index: 0;
 }

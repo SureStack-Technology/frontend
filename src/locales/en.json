@@ -27,6 +27,10 @@
     "accuracy": "Claims accuracy rate",
     "realtime": "Real-time monitoring"
   },
+  "techstack": {
+    "heading": "Powered by a Modern Stack",
+    "sub": "The battle-tested technologies behind the SureStack platform."
+  },
   "features": {
     "heading": "Why RISK Protocol?",
     "sub": "The only platform that combines real-time volatility analysis with decentralized risk assessment?"

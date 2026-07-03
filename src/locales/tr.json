@@ -27,6 +27,10 @@
     "accuracy": "Talep doğruluk oranı",
     "realtime": "Gerçek zamanlı izleme"
   },
+  "techstack": {
+    "heading": "Modern Bir Teknoloji Yığınıyla",
+    "sub": "SureStack platformunun arkasındaki güvenilir teknolojiler."
+  },
   "features": {
     "heading": "Neden RISK Protokolü?",
     "sub": "Gerçek zamanlı volatilite analizini merkeziyetsiz risk değerlendirmesiyle birleştiren tek platform?"

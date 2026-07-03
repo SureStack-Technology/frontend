@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode (Tailwind v4 defaults to prefers-color-scheme).
+   Keys the `dark:` variant off a `.dark` class on <html>, toggled by useThemeStore. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Theme Configuration */
 @theme {
   /* Color Palette - Cyberpunk theme */

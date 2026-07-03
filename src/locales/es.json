@@ -23,6 +23,10 @@
     "accuracy": "Tasa de precisión de las reclamaciones",
     "realtime": "Monitoreo en tiempo real"
   },
+  "techstack": {
+    "heading": "Impulsado por un stack moderno",
+    "sub": "Las tecnologías probadas detrás de la plataforma SureStack."
+  },
   "features": {
     "heading": "¿Por qué el Protocolo RISK?",
     "sub": "¿La única plataforma que combina el análisis de volatilidad en tiempo real con la evaluación de riesgos descentralizada?"

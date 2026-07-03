@@ -27,6 +27,10 @@
     "accuracy": "理赔准确率",
     "realtime": "实时监测中"
   },
+  "techstack": {
+    "heading": "由现代技术栈驱动",
+    "sub": "支撑 SureStack 平台的成熟技术。"
+  },
   "features": {
     "heading": "为何选择 RISK Protocol？",
     "sub": "唯一将实时波动率分析与去中心化风险评估完美结合的平台。"

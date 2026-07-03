@@ -7,7 +7,7 @@ import useLanguageStore from '../../stores/useLanguageStore';
 // Modularized Footer Link Column
 const FooterLinkColumn = ({ title, links, address }) => (
   <div>
-      <h3 className="text-white font-semibold mb-4">{title}</h3>
+      <h3 className="text-slate-900 dark:text-white font-semibold mb-4">{title}</h3>
       {address && (
         <div>{address}</div>
       )}
@@ -107,7 +107,7 @@ const Footer = () => {
 
   return (
     <>
-    <footer className="bg-slate-950 border-t border-slate-800 py-12">
+    <footer className="bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 
@@ -124,13 +124,13 @@ const Footer = () => {
                 <FooterLinkColumn title={t('footer.product')} links={productLinks}/>
 
                 <div>
-                    <h3 className="text-white font-semibold mb-4">{t('footer.company')}</h3>
+                    <h3 className="text-slate-900 dark:text-white font-semibold mb-4">{t('footer.company')}</h3>
                     <div className="font-subheading text-sm">{t('footer.address')}</div>
                 </div>
 
                 {/* Connection Column */}
                 <div>
-                    <h3 className="text-white font-semibold mb-4">{t('footer.connect')}</h3>
+                    <h3 className="text-slate-900 dark:text-white font-semibold mb-4">{t('footer.connect')}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center">
                         {socialLinks.map((social, index) => (
                             <a key={index}
@@ -138,7 +138,7 @@ const Footer = () => {
                                 title={social.label}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-slate-400 hover:text-cyan-400 transition-colors"
+                                className="text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                                 aria-label={social.label}>
                                 {social.icon}
                             </a>
@@ -147,7 +147,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="border-t border-slate-800 pt-8 text-center">
+            <div className="border-t border-slate-200 dark:border-slate-800 pt-8 text-center">
                 <p className="font-heading text-sm">{t('footer.copyright')}</p>
                 <div className="flex space-x-6">
                     <button onClick={() => setShowTerms(true)} 
