@@ -11,6 +11,9 @@ import birdeyeDark from "../../assets/birdeye/logo_dark.png";
 import alchemyMark from "../../assets/alchemy/alchemy-mark-blue-gradient.png";
 import heliusLogo from "../../assets/helius/Helius-Vertical-Logo.svg";
 import jupiterMark from "../../assets/jupiter/logo-dark.svg";
+import hardhatLogo from "../../assets/hardhat/hardhat.svg";
+import etherscanLight from "../../assets/etherscan/etherscan-logo-circle-light.svg";
+import etherscanDark from "../../assets/etherscan/etherscan-logo-circle.svg";
 
 // Birdeye (birdeye.so) has no Simple Icons logo, so we use the official brand
 // assets: the dark-ink mark on light surfaces and the green app-tile on dark.
@@ -43,6 +46,17 @@ const HeliusIcon = () => (
 // asset serves both.
 const JupiterIcon = ({ className }) => (
   <img src={jupiterMark} alt="Jupiter" className={`${className} object-contain`} />
+);
+
+const HardhatIcon = ({ className}) => (
+  <img src={hardhatLogo} alt="HardHat" className={`${className} object-contain`} />
+);
+
+const EtherscanIcon = ({ className}) => (
+  <>
+  <img src={etherscanLight} alt="Etherscan" className={`${className} block dark:hidden object-contain`} />
+  <img src={etherscanDark} alt="Etherscan" className={`${className} hidden dark:block object-contain`} />
+  </>
 );
 
 // DEX Screener ships a monochrome (solid black) mark, which would vanish on the
@@ -87,6 +101,8 @@ const techStack = [
   { name: "Helius", Icon: HeliusIcon, hideLabel: true, href: "https://www.helius.dev" },
   { name: "Jupiter", Icon: JupiterIcon, href: "https://jup.ag" },
   { name: "DEX Screener", Icon: DexScreenerIcon, href: "https://dexscreener.com" },
+  { name: "Hardhat", Icon: HardhatIcon, href: "https://hardhat.org" },
+  { name: "Etherscan", Icon: EtherscanIcon, href: "https://sepolia.etherscan.io/" },
 ];
 
 const TechStack = () => {
@@ -105,22 +121,22 @@ const TechStack = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        {/* <div className="flex flex-wrap justify-center gap-6"> */}
+        <div className="grid grid-cols-6 gap-6 justify-items-center">
           {techStack.map(({ name, Icon, hideLabel, href }) => (
-            <a
-              key={name}
+            <a key={name}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
               title={name}
               aria-label={`${name} — opens in a new tab`}
-              className="group flex flex-col items-center justify-center gap-3 w-32 h-32 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm hover:border-cyan-400 hover:shadow-neon-safe focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition-all duration-300">
+              className="group flex flex-col items-center justify-center w-32 h-32 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-500 backdrop-blur-sm hover:border-cyan-400 hover:shadow-neon-safe focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 transition-all duration-300">
               <Icon
                 color="default"
                 className="w-11 h-11 transition-transform duration-300 group-hover:scale-110"
                 aria-label={name} />
               {!hideLabel && (
-                <span className="text-sm font-subheading font-semibold text-slate-600 dark:text-slate-300">
+                <span className="text-sm font-subheading font-semibold text-slate-300 dark:text-slate-300">
                   {name}
                 </span>
               )}
