@@ -14,6 +14,9 @@ import jupiterMark from "../../assets/jupiter/logo-dark.svg";
 import hardhatLogo from "../../assets/hardhat/hardhat.svg";
 import etherscanLight from "../../assets/etherscan/etherscan-logo-circle-light.svg";
 import etherscanDark from "../../assets/etherscan/etherscan-logo-circle.svg";
+import lunarcrushLogo from "../../assets/lunarcrush/LunarCrush.png";
+import legalzoomLogo from "../../assets/legalzoom/LegalZoom.jpeg";
+import mercuryLogo from "../../assets/mercury/mercury_bank.png";
 
 // Birdeye (birdeye.so) has no Simple Icons logo, so we use the official brand
 // assets: the dark-ink mark on light surfaces and the green app-tile on dark.
@@ -59,6 +62,18 @@ const EtherscanIcon = ({ className}) => (
   </>
 );
 
+const LunarCrushIcon = ({ className}) => (
+  <img src={lunarcrushLogo} alt="LunarCrush" className={`${className} object-contain`} />
+);
+
+const LegalZoomIcon = ({ className}) => (
+  <img src={legalzoomLogo} alt="LegalZoom" className={`${className} object-contain`} />
+);
+
+const MercuryBankIcon = ({ className}) => (
+  <img src={mercuryLogo} alt="MercuryBank" className={`${className} object-contain`} />
+);
+
 // DEX Screener ships a monochrome (solid black) mark, which would vanish on the
 // dark tile. Inlining it with `fill="currentColor"` lets us theme it dark-on-light
 // and light-on-dark so it stays visible in both modes.
@@ -93,7 +108,6 @@ l-25 -23 -22 35 -22 36 -31 -22 c-29 -21 -30 -21 -23 -2 20 47 36 135 36 200
 // brand's official colour, all of which stay legible on light and dark surfaces.
 const techStack = [
   { name: "React", Icon: SiReact, href: "https://react.dev" },
-  { name: "Vite", Icon: SiVite, href: "https://vite.dev" },
   { name: "Tailwind CSS", Icon: SiTailwindcss, href: "https://tailwindcss.com" },
   { name: "Clerk", Icon: SiClerk, href: "https://clerk.com" },
   { name: "Birdeye", Icon: BirdeyeIcon, href: "https://birdeye.so" },
@@ -103,6 +117,9 @@ const techStack = [
   { name: "DEX Screener", Icon: DexScreenerIcon, href: "https://dexscreener.com" },
   { name: "Hardhat", Icon: HardhatIcon, href: "https://hardhat.org" },
   { name: "Etherscan", Icon: EtherscanIcon, href: "https://sepolia.etherscan.io/" },
+  { name: "LunarCrush", Icon: LunarCrushIcon, hideLabel: true, href: "https://lunarcrush.com/" },
+  { name: "LegalZoom", Icon: LegalZoomIcon, href: "https://www.legalzoom.com" },
+  { name: "MercuryBank", Icon: MercuryBankIcon, href: "https://mercury.com/" },
 ];
 
 const TechStack = () => {
