@@ -120,7 +120,8 @@ const Navigation = () => {
 
                         <a href="https://demo.surestack.tech"
                             className={"bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-subheading font-semibold transition flex items-center"}>
-                            <AppWindow className="w-5 h-5 mr-2" /> Demo
+                            {/* <AppWindow className="w-5 h-5 mr-2" /> Demo */}
+                            Prime<br/>Intellegence
                         </a>
 
                         <ThemeSwitcher />
